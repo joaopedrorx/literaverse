@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Literaverse - Explore Novos Universos Literários</title>
+    <title>Meu Perfil - Literaverse</title>
     <link rel="stylesheet" href="CSS/estilo.css">
-    <!-- Favicons locais e manifest -->
     <link rel="icon" href="Favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="Favicon/favicon-16x16.png" sizes="16x16">
     <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
@@ -14,10 +13,7 @@
 </head>
 <body class="bg-theme-background text-theme-primary">
 
-    <!-- 
-      Componente: Cabeçalho Principal
-      Descrição: Navegação do site, responsiva, com logo, busca, links, ações e troca de tema.
-    -->
+    <!-- Cabeçalho (Componente Reutilizado) -->
     <header class="bg-theme-surface/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center" role="navigation" aria-label="Menu principal">
             <a href="index.html" class="flex items-center space-x-2 flex-shrink-0">
@@ -70,34 +66,34 @@
         </div>
     </header>
 
-    <main>
-        <section class="relative hero-bg py-20 md:py-32 text-center">
-            <div class="container mx-auto px-6">
-                <h1 class="font-title text-4xl md:text-6xl font-bold text-theme-primary leading-tight">Navegue por Galáxias de Histórias</h1>
-                <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-theme-secondary">Conecte-se com leitores, descubra autores emergentes e publique sua própria jornada literária no Literaverse.</p>
-                <div class="mt-8">
-                    <a href="biblioteca.html" class="bg-theme-accent-yellow text-theme-on-accent font-bold py-3 px-8 rounded-full text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-block">Explorar a Biblioteca</a>
-                </div>
+    <main class="container mx-auto px-6 py-12">
+        <!-- Seção do Perfil -->
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
+            <img src="https://placehold.co/150x150/5f3f71/F4E927?text=User" alt="Foto do Usuário" class="rounded-full w-32 h-32 md:w-40 md:h-40 border-4 border-theme-accent-purple">
+            <div>
+                <h1 class="font-title text-4xl font-bold text-theme-primary">NomeDoUsuario</h1>
+                <p class="text-theme-secondary mt-2">Um explorador de mundos literários. Juntou-se em Agosto de 2025.</p>
+                <button class="mt-4 bg-theme-accent-yellow text-theme-on-accent font-bold py-2 px-4 rounded-full text-sm">Editar Perfil</button>
             </div>
-        </section>
+        </div>
 
-        <section class="py-16 md:py-24">
-            <div class="container mx-auto px-6">
-                <h2 class="font-title text-3xl md:text-4xl font-bold text-center mb-12 text-theme-primary">Recém-Chegados à Galáxia</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Card de Livro - imagem local -->
-                    <div class="bg-theme-surface rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="Imagens/capadomcasmurro.jpg" alt="Capa do livro Dom Casmurro" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-title text-xl font-bold mb-2 text-theme-primary">Dom Casmurro</h3>
-                            <p class="text-sm text-theme-secondary mb-4">Machado de Assis</p>
-                            <a href="biblioteca.html" class="font-semibold text-theme-accent-yellow hover:underline">Ver Detalhes →</a>
-                        </div>
-                    </div>
-                    <!-- Repetir cards... -->
+        <!-- Seção: Minhas Obras -->
+        <div class="mb-12">
+            <h2 class="font-title text-3xl font-bold text-theme-primary mb-6">Minhas Obras Publicadas</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card de Obra do Usuário -->
+                <div class="bg-theme-surface rounded-lg p-4 text-center">
+                    <h3 class="font-title text-xl font-bold text-theme-primary">Crônicas de Marte</h3>
+                    <p class="text-sm text-theme-secondary mb-4">Em andamento</p>
+                    <a href="#" class="font-semibold text-theme-accent-yellow hover:underline">Gerenciar</a>
+                </div>
+                <!-- Card para Nova Obra -->
+                <div class="border-2 border-dashed border-theme flex items-center justify-center rounded-lg min-h-[120px] hover:border-theme-accent-yellow transition-colors">
+                    <a href="#" class="text-theme-secondary hover:text-theme-primary">+ Publicar Nova Obra</a>
                 </div>
             </div>
-        </section>
+        </div>
+
     </main>
 
     <footer class="bg-black/30 py-12 mt-16">
@@ -106,7 +102,42 @@
         </div>
     </footer>
 
-    <!-- Antes: script inline removido; usar arquivo externo padronizado -->
-    <script src="JS/script.js"></script>
+    <script>
+        // Script para Menu Mobile e Troca de Tema
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('theme-icon-sun');
+        const moonIcon = document.getElementById('theme-icon-moon');
+
+        // Lógica do Menu Mobile
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Lógica da Troca de Tema
+        const applyTheme = (theme) => {
+            if (theme === 'light') {
+                document.body.classList.add('light-mode');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                document.body.classList.remove('light-mode');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        };
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+        });
+
+        // Aplicar tema salvo ao carregar a página
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        applyTheme(savedTheme);
+    </script>
 </body>
 </html>

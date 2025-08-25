@@ -1,107 +1,154 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca 📖 | Literaverse</title>
-    <link rel="icon" href="Favicon/Teste5.png" type="image/png"> 
-    <link rel="stylesheet" href="css/estilo.css">
-    <script src="JS/Buttom.js"></script>
+    <title>Biblioteca - Literaverse</title>
+    <link rel="stylesheet" href="CSS/estilo.css">
+    <link rel="icon" href="Favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="Favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#4A2A5A">
 </head>
-<body>
-    <header class="site-header">
-        <img src="Imagens/logo_sem_nome1.png" alt="Logo Literaverse" class="logo-literaverse">
-        <div class="header-text">
-            <h1>Biblioteca Literaverse</h1>
-            <p>Explore o universo infinito da literatura</p>
+<body class="bg-theme-background text-theme-primary">
+
+    <!-- Cabeçalho (Componente Reutilizado) -->
+    <header class="bg-theme-surface/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center" role="navigation" aria-label="Menu principal">
+            <a href="index.html" class="flex items-center space-x-2 flex-shrink-0">
+                <img src="Imagens/logo.png" alt="Literaverse" class="h-8 w-8 object-contain">
+                <span class="font-title text-2xl font-bold text-theme-primary">Literaverse</span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="biblioteca.html" class="hover:text-theme-accent-yellow transition-colors duration-300 text-theme-primary">Biblioteca</a>
+
+                <form role="search" class="relative">
+                    <label for="search-desktop" class="sr-only">Buscar</label>
+                    <input id="search-desktop" type="search" placeholder="Buscar..." class="bg-theme-background w-48 py-2 pl-10 pr-4 rounded-full text-theme-primary placeholder-gray-400 focus:outline-none focus:ring-2 ring-theme-accent-yellow">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+                    </div>
+                </form>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="usuario.html" class="text-theme-primary hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
+                    <a href="cadastro.html" class="bg-theme-accent-yellow text-theme-on-accent font-bold py-2 px-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">Cadastre-se</a>
+                </div>
+
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-theme-background focus:outline-none" aria-label="Alternar tema">
+                    <svg id="theme-icon-sun" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <svg id="theme-icon-moon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </button>
+
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-4" aria-hidden="true">
+            <form role="search" class="relative">
+                <label for="search-mobile" class="sr-only">Buscar</label>
+                <input id="search-mobile" type="search" placeholder="Buscar..." class="bg-theme-background w-full py-2 pl-10 pr-4 rounded-full text-theme-primary placeholder-gray-400 focus:outline-none focus:ring-2 ring-theme-accent-yellow">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+                </div>
+            </form>
+
+            <a href="biblioteca.html" class="block hover:text-theme-accent-yellow transition-colors duration-300">Biblioteca</a>
+            <a href="usuario.html" class="block hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
+            <a href="cadastro.html" class="block bg-theme-accent-yellow text-theme-on-accent font-bold py-2 px-4 rounded-full text-center">Cadastre-se</a>
         </div>
-        <img src="Imagens/logo_sem_nome2.png" alt="Logo Literaverse" class="logo-literaverse">
     </header>
 
+    <!-- Exemplo de nav simples para conectar páginas -->
     <nav>
-        <ul>
-            <li><a href="index.html">Home 🏠</a></li>
-            <li><a href="biblioteca.html">Biblioteca 📖</a></li>
-            <li><a href="cadastro.html">Cadastro ✍️</a></li>
-            <li><button id="toggle-theme">🌙 Modo Escuro</button></li>
-        </ul>
+        <a href="index.html">Home</a> |
+        <a href="biblioteca.html">Biblioteca</a> |
+        <a href="cadastro.html">Cadastre-se</a> |
+        <a href="usuario.html">Login</a>
     </nav>
 
-    <main>
-        <section>
-            <h2>Explore Nossa Biblioteca ✨</h2>
-            <p>Faça login para acessar recursos completos e fazer upload de suas próprias obras!</p>
+    <main class="container mx-auto px-6 py-12">
+        <h1 class="font-title text-4xl md:text-5xl font-bold text-theme-primary mb-8">Nossa Biblioteca</h1>
+        
+        <!-- Filtros -->
+        <div class="bg-theme-surface rounded-lg p-4 mb-8 flex flex-wrap gap-4 items-center">
+            <span class="font-bold">Filtrar por:</span>
+            <select class="bg-theme-background rounded p-2 focus:outline-none focus:ring-2 ring-theme-accent-yellow">
+                <option>Gênero</option>
+                <option>Ficção Científica</option>
+                <option>Fantasia</option>
+                <option>Romance</option>
+            </select>
+            <select class="bg-theme-background rounded p-2 focus:outline-none focus:ring-2 ring-theme-accent-yellow">
+                <option>Classificação</option>
+                <option>5 Estrelas</option>
+                <option>4+ Estrelas</option>
+            </select>
+        </div>
 
-            <section>
-                <h3>Obras Clássicas</h3>
-                <ul>
-                    <li>📜 A Divina Comédia - Dante Alighieri</li>
-                    <li>⚔️ A Ilíada - Homero</li>
-                    <li>🕯️ Crime e Castigo - Fiódor Dostoiévski</li>
-                </ul>
-            </section>
-
-            <section>
-                <h3>Poesia </h3>
-                <ul>
-                    <li>🌺 Flores do Mal - Charles Baudelaire</li>
-                    <li>🌕 Lua Nova - Olavo Bilac</li>
-                    <li>🦜 O Corvo - Edgar Allan Poe</li>
-                </ul>
-            </section>
-
-            <section>
-                <h3>Filosofia 🏛️</h3>
-                <ul>
-                    <li>🤔 Assim Falou Zaratustra - Friedrich Nietzsche</li>
-                    <li>⚖️ A República - Platão</li>
-                    <li>🧠 O Mundo Como Vontade e Representação - Schopenhauer</li>
-                </ul>
-            </section>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Sobre o Literaverse</h3>
-                <p>🌌 O universo da literatura ao seu alcance. Compartilhe, descubra e explore obras literárias gratuitamente.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/" target="_blank">
-                        <img src="Imagens/instagram.png" alt="Instagram" style="width: 30px; height: 30px;"> 
-                      </a>
-                      <a href="http://www.discord.com/" target="_blank">
-                        <img src="Imagens/discord.png" alt="Discord" style="width: 30px; height: 30px;" >
-                      </a>
-                      <a href="https://x.com/" target="_blank">
-                        <img src="Imagens/X.png" alt="X" style="width: 30px; height: 27px;">
-                      </a>
+        <!-- Grid de Livros -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <!-- Exemplo de 10 cards -->
+            <div class="bg-theme-surface rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                <img src="https://placehold.co/400x600/5f3f71/F4E927?text=Livro+1" alt="Capa do Livro 1" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-title text-lg font-bold truncate text-theme-primary">Título do Livro Um</h3>
+                    <p class="text-sm text-theme-secondary">Nome do Autor</p>
                 </div>
             </div>
-
-            <div class="footer-section">
-                <h3>Navegação</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="biblioteca.html">Biblioteca</a></li>
-                    <li><a href="cadastro.html">Cadastro</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Suporte e Comunidade</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Sobre Nós</a></li>
-                    <li><a href="#">Perguntas Frequentes (FAQ)</a></li>
-                    <li><a href="#">Diretrizes da Comunidade</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </div>
+            <!-- Repita o card mais 9 vezes para um total de 10 -->
         </div>
+    </main>
 
-        <div class="copyright">
-            &copy; 2025 Literaverse. Todos os direitos reservados.
+    <footer class="bg-black/30 py-12 mt-16">
+        <div class="container mx-auto px-6 text-center text-sm text-gray-400">
+            <p>&copy; 2025 Literaverse. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        // Script para Menu Mobile e Troca de Tema
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('theme-icon-sun');
+        const moonIcon = document.getElementById('theme-icon-moon');
+
+        // Lógica do Menu Mobile
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Lógica da Troca de Tema
+        const applyTheme = (theme) => {
+            if (theme === 'light') {
+                document.body.classList.add('light-mode');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                document.body.classList.remove('light-mode');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        };
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+        });
+
+        // Aplicar tema salvo ao carregar a página
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        applyTheme(savedTheme);
+    </script>
 </body>
 </html>

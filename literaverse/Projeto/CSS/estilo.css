@@ -1,391 +1,142 @@
-/* Importa a fonte Poppins do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/*
+ * Arquivo: CSS/estilo.css
+ * Descrição: Folha de estilos central para o projeto Literaverse.
+ * Autor: Seu Nome
+ * Data: 25/08/2025
+*/
 
-/* Reset e Variáveis de Cor (Root) */
-:root {
-    --primary-bg: #492450;
-    --secondary-bg: #2a083a;
-    --card-bg: rgba(30, 10, 50, 0.75);
-    --header-bg: rgba(26, 5, 36, 0.7);
-    --primary-accent: #9d4edd;
-    --secondary-accent: #c77dff;
-    --text-color: #e0d6eb;
-    --header-text: #e0b0ff;
-    --font-main: 'Poppins', sans-serif;
-    --shadow-color: rgba(157, 78, 221, 0.4);
-    --bg-site-header: #1e1b2e;
-}
+/* --- Importações --- */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
 
-.dark-mode {
-    --primary-bg: #1a0524;
-    --card-bg: rgba(20, 5, 40, 0.75);
-    --text-color: #f0e6ff;
-    --header-bg: rgba(20, 5, 35, 0.9);
-    --header-text: #d9b3ff;
-    --shadow-color: rgba(157, 78, 221, 0.6);
-    --bg-site-header: rgba(20, 5, 35, 0.9);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* --- Estilos Base e Fontes --- */
 body {
-    font-family: var(--font-main);
-    line-height: 1.7;
-    color: var(--text-color);
-    background-color: var(--primary-bg);
-    background-image: 
-    radial-gradient(circle at 15% 15%, rgba(157, 78, 221, 0.15) 0%, transparent 30%),
-        radial-gradient(circle at 85% 85%, rgba(75, 0, 130, 0.15) 0%, transparent 30%);    
-    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header */
-header {
-    text-align: center;
-    padding: 40px 20px;
-    margin-bottom: 30px;
-    background: var(--header-bg);
-    border-radius: 12px;
-    border: 1px solid rgba(157, 78, 221, 0.2);
-    box-shadow: 0 4px 25px var(--shadow-color);
+.font-title {
+    font-family: 'Space Grotesk', sans-serif;
 }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--secondary-accent);
-    margin-bottom: 10px;
-    text-shadow: 0 0 10px rgba(199, 125, 255, 0.5);
+/* --- Tema Escuro (Padrão) --- */
+/* Aplicado diretamente nas classes de utilidade */
+.bg-theme-background { background-color: #4A2A5A; }
+.bg-theme-surface { background-color: #5f3f71; }
+.text-theme-primary { color: #f0eafc; }
+.text-theme-secondary { color: #E2B8E2; }
+.text-theme-accent-yellow { color: #F4E927; }
+.bg-theme-accent-yellow { background-color: #F4E927; }
+.ring-theme-accent-yellow { --tw-ring-color: #F4E927; }
+.text-theme-accent-purple { color: #AF71FA; }
+.text-theme-on-accent { color: #4A2A5A; }
+.border-theme { border-color: #7a5a8e; }
+
+.hero-bg {
+    background-image: radial-gradient(circle at 20% 20%, rgba(175, 113, 250, 0.2), transparent 40%),
+                      radial-gradient(circle at 80% 70%, rgba(226, 184, 226, 0.15), transparent 40%);
 }
 
-/* Títulos e Parágrafos */
-h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: var(--header-text);
-    margin: 40px 0 20px;
-    border-bottom: 2px solid var(--primary-accent);
-    padding-bottom: 10px;
+/* --- Tema Claro (Sobrescreve o Padrão) --- */
+/*
+ * MOTIVO: Utilizar o seletor `body.light-mode` para aplicar um conjunto
+ * de estilos que sobrescrevem as classes do tema escuro, permitindo
+ * a troca de tema com uma única mudança de classe no body.
+*/
+body.light-mode {
+    --color-background: #F5F3F7;
+    --color-surface: #FFFFFF;
+    --color-text-primary: #4A2A5A;
+    --color-text-secondary: #5f3f71;
+    --color-accent-yellow: #E1AD01;
+    --color-accent-purple: #8A2BE2;
+    --color-text-on-accent: #FFFFFF;
+    --color-border: #e2dbe8;
+    --hero-bg-1: rgba(175, 113, 250, 0.1);
+    --hero-bg-2: rgba(74, 42, 90, 0.1);
 }
 
-h3 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #b388ff;
-    margin: 20px 0 15px;
+body.light-mode .bg-theme-background { background-color: var(--color-background); }
+body.light-mode .bg-theme-surface { background-color: var(--color-surface); }
+body.light-mode .text-theme-primary { color: var(--color-text-primary); }
+body.light-mode .text-theme-secondary { color: var(--color-text-secondary); }
+body.light-mode .text-theme-accent-yellow { color: var(--color-accent-yellow); }
+body.light-mode .bg-theme-accent-yellow { background-color: var(--color-accent-yellow); }
+body.light-mode .ring-theme-accent-yellow { --tw-ring-color: var(--color-accent-yellow); }
+body.light-mode .text-theme-accent-purple { color: var(--color-accent-purple); }
+body.light-mode .text-theme-on-accent { color: var(--color-text-on-accent); }
+body.light-mode .border-theme { border-color: var(--color-border); }
+
+body.light-mode .hero-bg {
+    background-image: radial-gradient(circle at 20% 20%, var(--hero-bg-1), transparent 40%),
+                      radial-gradient(circle at 80% 70%, var(--hero-bg-2), transparent 40%);
 }
 
-p {
-    margin-bottom: 15px;
-    font-size: 1.05rem;
+/* --- Transições --- */
+.bg-theme-surface, .bg-theme-accent-yellow, .bg-theme-background {
+    transition: background-color 0.3s ease;
 }
 
-/* Navegação */
-nav {
-    background: var(--card-bg);
-    padding: 0;
-    border-radius: 50px;
-    margin: 0 auto 30px auto;
-    max-width: 600px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+/* Paleta e suporte a temas (light-mode / dark-mode) */
+:root {
+    --transition-duration: 200ms;
 }
 
-
-nav ul {
-    font-size: 30px;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px; 
-    flex-wrap: nowrap;
+/* Light mode (padrão claro da paleta existente) */
+.light-mode {
+    --theme-background: #F7F6F9;        /* fundo claro suave */
+    --theme-primary: #2C1A2E;           /* texto principal escuro (roxo-avermelhado) */
+    --theme-secondary: #6B6070;         /* texto secundário */
+    --theme-surface: #FFFFFF;           /* superfícies / cards */
+    --theme-accent-yellow: #F6C94C;     /* amarelo de destaque */
+    --theme-on-accent: #1A0F12;         /* texto sobre o amarelo */
+    --theme-accent-purple: #7B3FA3;     /* roxo de acento (claro) */
 }
 
-
-nav a {
-    color: var(--header-text);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 400;
-    transition: all 0.3s ease;
-    position: relative;
-    padding: 5px 0;
+/* Dark mode — tons mais escuros com roxo azulado */
+.dark-mode {
+    --theme-background: #071024;        /* fundo bem escuro azul-acinzentado */
+    --theme-primary: #E8EAFE;           /* texto principal claro */
+    --theme-secondary: #B8C3DB;         /* texto secundário claro */
+    --theme-surface: #0F1724;           /* superfície dos cards / navbar */
+    --theme-accent-yellow: #F6C94C;     /* mantém contraste do amarelo */
+    --theme-on-accent: #0B1020;         /* texto sobre amarelo no modo escuro */
+    --theme-accent-purple: #5B3EA6;     /* roxo-azulado mais escuro */
 }
 
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: var(--secondary-accent);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
+/* Aplicação padrão (caso nenhum tema esteja setado) */
+body {
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+    background-color: var(--theme-background);
+    color: var(--theme-primary);
 }
 
-nav a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 8px var(--header-text);
+/* Tokens utilitários usados no HTML */
+.bg-theme-background { background-color: var(--theme-background) !important; }
+.text-theme-primary { color: var(--theme-primary) !important; }
+.text-theme-secondary { color: var(--theme-secondary) !important; }
+.bg-theme-surface { background-color: var(--theme-surface) !important; }
+.text-theme-accent-yellow { color: var(--theme-accent-yellow) !important; }
+.bg-theme-accent-yellow { background-color: var(--theme-accent-yellow) !important; }
+.text-theme-on-accent { color: var(--theme-on-accent) !important; }
+.text-theme-accent-purple { color: var(--theme-accent-purple) !important; }
+
+/* Pequenas utilidades de acessibilidade */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }
 
-nav a:hover::after {
+/* Garante que imagens de capa se ajustem bem */
+.card-image {
     width: 100%;
-}
-
-/* Conteúdo Principal */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
-    background: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-}
-
-article {
-    background: rgba(60, 20, 90, 0.4);
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 10px;
-    border-left: 4px solid var(--primary-accent);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Botões */
-button, input[type="submit"] {
-    background: linear-gradient(90deg, #8e44ad, #9b59b6);
-    color: white;
-    font-family: var(--font-main);
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
-}
-
-button:hover, input[type="submit"]:hover {
-    background: linear-gradient(90deg, #9b59b6, #8e44ad);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px var(--shadow-color);
-}
-
-/* Estilos de Formulário */
-form {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 30px;
-    background: rgba(40, 15, 70, 0.6);
-    border-radius: 10px;
-}
-
-label {
-    display: block;
-    margin: 15px 0 8px;
-    color: #b388ff;
-    font-weight: 400;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #7b2cbf;
-    border-radius: 8px;
-    background: rgba(30, 10, 50, 0.9);
-    color: var(--text-color);
-    font-size: 1rem;
-    font-family: var(--font-main);
-    transition: all 0.3s ease;
-}
-
-input:focus,
-select:focus {
-    outline: none;
-    border-color: var(--secondary-accent);
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
-}
-
-input[type="checkbox"] {
-    margin-right: 10px;
-    transform: scale(1.2);
-}
-
-/* Listas */
-ul {
-    margin-left: 25px;
-    margin-bottom: 20px;
-}
-
-li {
-    margin-bottom: 10px;
-    padding-left: 10px;
-}
-
-/* Mensagens de Erro */
-.erro {
-    color: #ff6b6b;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-top: 5px;
-    background-color: rgba(255, 107, 107, 0.1);
-    padding: 8px;
-    border-radius: 5px;
-    border-left: 3px solid #ff6b6b;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 50px;
-    padding: 40px 20px;
-    background: var(--header-bg);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    background-color: var(--card-bg);
-}
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left;
-    
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 250px;
-    
-}
-
-.footer-section h3 {
-    color: var(--secondary-accent);
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--primary-accent);
-    padding-bottom: 10px;
-}
-
-.footer-section p {
-    color: #bca0dc;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a {
-    color: #bca0dc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #ffffff;
-    padding-left: 5px;
-}
-
-.social-links {
-    margin-top: 15px;
-}
-
-.social-links a {
-    color: var(--header-text);
-    font-size: 1.8rem;
-    margin-right: 20px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #ffffff;
-    transform: scale(1.1);
-}
-
-.copyright {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(157, 78, 221, 0.2);
-    color: #a08ab8;
-    font-size: 0.9rem;
-}
-
-.site-header {
-    background-color: var(--bg-site-header);
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    justify-content: center; 
-}
-
-.header-content {
-    display: flex;
-    align-items: center; 
-    gap: 16px;
-}
-
-.logo-literaverse {
-    max-height: 120px;
-    width: auto;
-}
-
-.header-text h1 {
-    margin: 0;
-    font-size: 2em;
-    color: white;
-    padding-top: 20px;
-}
-
-/*Buttom*/
-#toggle-theme {
-    background: linear-gradient(90deg, #8e44ad, #9b59b6); 
-    border: none;
-    color: white; 
-    font-size: 1rem;
-    font-weight: 400;
-    font-family: var(--font-main);
-    cursor: pointer;
-    padding: 5px 8px; 
-    border-radius: 8px; 
-    transition: all 0.3s ease;
-}
-
-#toggle-theme:hover {
-    background: linear-gradient(90deg, #9b59b6, #8e44ad); 
-    color: #fff;
-    text-shadow: 0 0 8px var(--header-text);
-}
-
-
-body.dark-mode #toggle-theme {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-body.dark-mode #toggle-theme:hover {
-    color: #ffffff; /* ou você pode deixar transparente também se quiser */
-    text-shadow: none;
+    height: 16rem;
+    object-fit: cover;
 }
