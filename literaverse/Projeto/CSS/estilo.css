@@ -83,17 +83,18 @@ body.light-mode .hero-bg {
   --transition-duration: 200ms;
 }
 
-/* Light mode (padrão) */
+/* Tokens de tema — garante cor de footer opaca */
 .light-mode {
   --theme-background: #F7F6F9;
-  --theme-primary: #4A2A5A;       /* cor 1 (presumida) */
-  --theme-accent-purple: #AF71FA; /* cor 2 */
-  --theme-secondary: #E2B8E2;     /* cor 3 */
-  --theme-accent-yellow: #F4E927; /* cor 4 */
+  --theme-primary: #4A2A5A;
+  --theme-accent-purple: #AF71FA;
+  --theme-secondary: #E2B8E2;
+  --theme-accent-yellow: #F4E927;
   --theme-on-accent: #1A0F12;
+  --theme-surface: #FFFFFF;
+  --footer-bg-color: var(--theme-surface); /* footer opaco no modo claro */
 }
 
-/* Dark mode — roxo azulado mais escuro */
 .dark-mode {
   --theme-background: #071024;
   --theme-primary: #E8EAFE;
@@ -102,6 +103,7 @@ body.light-mode .hero-bg {
   --theme-accent-yellow: #F6C94C;
   --theme-on-accent: #0B1020;
   --theme-accent-purple: #5B3EA6;
+  --footer-bg-color: #0F1724; /* footer opaco no modo escuro */
 }
 
 /* Apply tokens */
@@ -136,3 +138,154 @@ body {
 
 /* imagem de capa padrão */
 .card-image { width:100%; height:16rem; object-fit:cover; }
+/* Ajustes do footer: espaçamento, centralização e estilos de ícones */
+footer {
+  background-color: var(--footer-bg-color);
+  padding: 3rem 0;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  color: var(--theme-secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+footer .grid {
+  width: 100%;
+  justify-items: center;
+  text-align: center;
+}
+
+footer .max-w-xs {
+  padding: 0 0.5rem;
+}
+
+footer h4 {
+  color: var(--theme-primary);
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.15;
+}
+
+footer p,
+footer a span,
+footer .text-theme-secondary {
+  color: var(--theme-secondary);
+  opacity: 0.95;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: var(--theme-secondary);
+  text-decoration: none;
+}
+
+footer a:hover { text-decoration: underline; }
+
+footer .flex.flex-col.items-center a {
+  width: 100%;
+  max-width: 220px;
+  justify-content: center;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+footer a img {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  filter: grayscale(30%);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+footer a:hover img {
+  transform: translateY(-3px) scale(1.06);
+  filter: none;
+}
+
+/* nota: mantém boa separação entre colunas em desktop */
+@media (min-width: 768px) {
+  footer { padding: 4rem 0; }
+  footer .grid { gap: 2.5rem; }
+  footer .max-w-xs { text-align: center; }
+  footer p, footer a span { font-size: 0.98rem; }
+}
+
+/* mobile: reduz espaçamento vertical para melhor aproveitamento */
+@media (max-width: 479px) {
+  footer { padding: 2rem 0; }
+  footer a img { width: 24px; height: 24px; margin-right: 0.5rem; }
+  footer h4 { font-size: 1rem; }
+}
+
+/* Estilos para inputs / selects / textarea — melhor contraste no modo claro */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea,
+select {
+  background-color: var(--theme-surface);
+  color: var(--theme-primary);
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: none;
+  transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+/* Borda levemente colorida no modo claro para contraste */
+body.light-mode input[type="text"],
+body.light-mode input[type="email"],
+body.light-mode input[type="password"],
+body.light-mode input[type="date"],
+body.light-mode textarea,
+body.light-mode select {
+  border-color: rgba(74,42,90,0.08);
+}
+
+/* Placeholder com baixa opacidade e cor compatível com tema */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(74,42,90,0.35);
+}
+
+/* Estado de foco mais visível */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--theme-accent-purple);
+  box-shadow: 0 4px 12px rgba(175,113,250,0.12);
+  transform: translateY(-1px);
+}
+
+/* Garante que o formulário com classe bg-theme-surface tenha contraste e sombra */
+form.bg-theme-surface {
+  background-color: var(--theme-surface);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  padding: 1.25rem;
+  border-radius: 8px;
+}
+
+/* Header z-index e espaçamento do main para evitar sobreposição do H1 */
+header { z-index: 60; }
+main { padding-top: 1.25rem; }
+
+/* Ajustes responsivos */
+@media (max-width: 640px) {
+  input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    padding: 0.65rem 0.75rem;
+  }
+}

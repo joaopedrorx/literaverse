@@ -314,11 +314,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
   const themeToggle = document.getElementById('theme-toggle');
   const sunIcon = document.getElementById('theme-icon-sun');
   const moonIcon = document.getElementById('theme-icon-moon');
 
-  // decide tema inicial: localStorage -> preferencia do sistema -> light
   const saved = localStorage.getItem('theme');
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const initial = saved || (prefersDark ? 'dark' : 'light');
@@ -330,9 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sunIcon) sunIcon.classList.toggle('hidden', theme !== 'light');
     if (moonIcon) moonIcon.classList.toggle('hidden', theme !== 'dark');
 
-    if (themeToggle) themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
-
-    localStorage.setItem('theme', theme);
+    try { localStorage.setItem('theme', theme); } catch (e) {}
   }
 
   applyTheme(initial);
@@ -340,21 +339,18 @@ document.addEventListener('DOMContentLoaded', () => {
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const current = document.body.classList.contains('light-mode') ? 'light' : 'dark';
-      const next = current === 'light' ? 'dark' : 'light';
-      applyTheme(next);
+      applyTheme(current === 'light' ? 'dark' : 'light');
     });
   }
 
-  // Mobile menu (mantém comportamento padronizado)
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+  // Mobile menu: segura checagem e comportamentos (Esc, click fora, bloquear scroll)
   if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.setAttribute('aria-controls','mobile-menu');
-    mobileMenuButton.setAttribute('aria-expanded','false');
+    mobileMenuButton.setAttribute('aria-controls', 'mobile-menu');
+    mobileMenuButton.setAttribute('aria-expanded', 'false');
 
-    mobileMenuButton.addEventListener('click', () => {
-      const isHidden = mobileMenu.classList.toggle('hidden'); // returns true when now hidden
-      const isOpen = !isHidden;
+    mobileMenuButton.addEventListener('click', (e) => {
+      const nowHidden = mobileMenu.classList.toggle('hidden'); // true when now hidden
+      const isOpen = !nowHidden;
       mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
@@ -363,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!mobileMenu.classList.contains('hidden')) {
         if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
           mobileMenu.classList.add('hidden');
-          mobileMenuButton.setAttribute('aria-expanded','false');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
           document.body.style.overflow = '';
         }
       }
@@ -372,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
         mobileMenu.classList.add('hidden');
-        mobileMenuButton.setAttribute('aria-expanded','false');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       }
     });
@@ -380,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenu.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
-        mobileMenuButton.setAttribute('aria-expanded','false');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
