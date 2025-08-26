@@ -13,7 +13,7 @@
 </head>
 <body class="bg-theme-background text-theme-primary">
 
-    <!-- Cabeçalho (Componente Reutilizado) -->
+    <!-- Cabeçalho (padronizado) -->
     <header class="bg-theme-surface/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center" role="navigation" aria-label="Menu principal">
             <a href="index.html" class="flex items-center space-x-2 flex-shrink-0">
@@ -66,14 +66,6 @@
         </div>
     </header>
 
-    <!-- Exemplo de nav simples para conectar páginas -->
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="biblioteca.html">Biblioteca</a> |
-        <a href="cadastro.html">Cadastre-se</a> |
-        <a href="usuario.html">Login</a>
-    </nav>
-
     <main class="container mx-auto px-6 py-12">
         <h1 class="font-title text-4xl md:text-5xl font-bold text-theme-primary mb-8">Nossa Biblioteca</h1>
         
@@ -113,42 +105,6 @@
         </div>
     </footer>
 
-    <script>
-        // Script para Menu Mobile e Troca de Tema
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const themeToggle = document.getElementById('theme-toggle');
-        const sunIcon = document.getElementById('theme-icon-sun');
-        const moonIcon = document.getElementById('theme-icon-moon');
-
-        // Lógica do Menu Mobile
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Lógica da Troca de Tema
-        const applyTheme = (theme) => {
-            if (theme === 'light') {
-                document.body.classList.add('light-mode');
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-            } else {
-                document.body.classList.remove('light-mode');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            }
-        };
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            localStorage.setItem('theme', newTheme);
-            applyTheme(newTheme);
-        });
-
-        // Aplicar tema salvo ao carregar a página
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        applyTheme(savedTheme);
-    </script>
+    <script src="JS/script.js"></script>
 </body>
 </html>

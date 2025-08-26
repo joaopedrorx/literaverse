@@ -77,41 +77,41 @@ body.light-mode .hero-bg {
     transition: background-color 0.3s ease;
 }
 
-/* Paleta e suporte a temas (light-mode / dark-mode) */
+/* --- Tokens de tema e suporte light / dark --- */
+/* transição global */
 :root {
-    --transition-duration: 200ms;
+  --transition-duration: 200ms;
 }
 
-/* Light mode (padrão claro da paleta existente) */
+/* Light mode (padrão) */
 .light-mode {
-    --theme-background: #F7F6F9;        /* fundo claro suave */
-    --theme-primary: #2C1A2E;           /* texto principal escuro (roxo-avermelhado) */
-    --theme-secondary: #6B6070;         /* texto secundário */
-    --theme-surface: #FFFFFF;           /* superfícies / cards */
-    --theme-accent-yellow: #F6C94C;     /* amarelo de destaque */
-    --theme-on-accent: #1A0F12;         /* texto sobre o amarelo */
-    --theme-accent-purple: #7B3FA3;     /* roxo de acento (claro) */
+  --theme-background: #F7F6F9;
+  --theme-primary: #4A2A5A;       /* cor 1 (presumida) */
+  --theme-accent-purple: #AF71FA; /* cor 2 */
+  --theme-secondary: #E2B8E2;     /* cor 3 */
+  --theme-accent-yellow: #F4E927; /* cor 4 */
+  --theme-on-accent: #1A0F12;
 }
 
-/* Dark mode — tons mais escuros com roxo azulado */
+/* Dark mode — roxo azulado mais escuro */
 .dark-mode {
-    --theme-background: #071024;        /* fundo bem escuro azul-acinzentado */
-    --theme-primary: #E8EAFE;           /* texto principal claro */
-    --theme-secondary: #B8C3DB;         /* texto secundário claro */
-    --theme-surface: #0F1724;           /* superfície dos cards / navbar */
-    --theme-accent-yellow: #F6C94C;     /* mantém contraste do amarelo */
-    --theme-on-accent: #0B1020;         /* texto sobre amarelo no modo escuro */
-    --theme-accent-purple: #5B3EA6;     /* roxo-azulado mais escuro */
+  --theme-background: #071024;
+  --theme-primary: #E8EAFE;
+  --theme-secondary: #B8C3DB;
+  --theme-surface: #0F1724;
+  --theme-accent-yellow: #F6C94C;
+  --theme-on-accent: #0B1020;
+  --theme-accent-purple: #5B3EA6;
 }
 
-/* Aplicação padrão (caso nenhum tema esteja setado) */
+/* Apply tokens */
 body {
-    transition: background-color var(--transition-duration), color var(--transition-duration);
-    background-color: var(--theme-background);
-    color: var(--theme-primary);
+  transition: background-color var(--transition-duration), color var(--transition-duration);
+  background-color: var(--theme-background);
+  color: var(--theme-primary);
 }
 
-/* Tokens utilitários usados no HTML */
+/* Utility classes usadas nos HTML */
 .bg-theme-background { background-color: var(--theme-background) !important; }
 .text-theme-primary { color: var(--theme-primary) !important; }
 .text-theme-secondary { color: var(--theme-secondary) !important; }
@@ -121,22 +121,18 @@ body {
 .text-theme-on-accent { color: var(--theme-on-accent) !important; }
 .text-theme-accent-purple { color: var(--theme-accent-purple) !important; }
 
-/* Pequenas utilidades de acessibilidade */
+/* small utilities */
 .sr-only {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0,0,0,0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
-/* Garante que imagens de capa se ajustem bem */
-.card-image {
-    width: 100%;
-    height: 16rem;
-    object-fit: cover;
-}
+/* imagem de capa padrão */
+.card-image { width:100%; height:16rem; object-fit:cover; }

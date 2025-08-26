@@ -314,80 +314,75 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const themeToggle = document.getElementById('theme-toggle');
-    const sunIcon = document.getElementById('theme-icon-sun');
-    const moonIcon = document.getElementById('theme-icon-moon');
+  const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.getElementById('theme-icon-sun');
+  const moonIcon = document.getElementById('theme-icon-moon');
 
-    // Inicializa tema: prioriza localStorage -> preferência do sistema -> light
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initial = savedTheme || (prefersDark ? 'dark' : 'light');
+  // decide tema inicial: localStorage -> preferencia do sistema -> light
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initial = saved || (prefersDark ? 'dark' : 'light');
 
-    function applyTheme(theme) {
-        document.body.classList.toggle('light-mode', theme === 'light');
-        document.body.classList.toggle('dark-mode', theme === 'dark');
+  function applyTheme(theme) {
+    document.body.classList.toggle('light-mode', theme === 'light');
+    document.body.classList.toggle('dark-mode', theme === 'dark');
 
-        if (sunIcon && moonIcon) {
-            sunIcon.classList.toggle('hidden', theme !== 'light');
-            moonIcon.classList.toggle('hidden', theme !== 'dark');
+    if (sunIcon) sunIcon.classList.toggle('hidden', theme !== 'light');
+    if (moonIcon) moonIcon.classList.toggle('hidden', theme !== 'dark');
+
+    if (themeToggle) themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+
+    localStorage.setItem('theme', theme);
+  }
+
+  applyTheme(initial);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+      const next = current === 'light' ? 'dark' : 'light';
+      applyTheme(next);
+    });
+  }
+
+  // Mobile menu (mantém comportamento padronizado)
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.setAttribute('aria-controls','mobile-menu');
+    mobileMenuButton.setAttribute('aria-expanded','false');
+
+    mobileMenuButton.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden'); // returns true when now hidden
+      const isOpen = !isHidden;
+      mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.classList.contains('hidden')) {
+        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded','false');
+          document.body.style.overflow = '';
         }
+      }
+    });
 
-        localStorage.setItem('theme', theme);
-    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.setAttribute('aria-expanded','false');
+        document.body.style.overflow = '';
+      }
+    });
 
-    applyTheme(initial);
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const current = document.body.classList.contains('light-mode') ? 'light' : 'dark';
-            const next = current === 'light' ? 'dark' : 'light';
-            applyTheme(next);
-        });
-    }
-
-    // Mobile menu controls (se existir)
-    if (mobileMenuButton && mobileMenu) {
-        // estado inicial
-        mobileMenuButton.setAttribute('aria-controls', 'mobile-menu');
-        mobileMenuButton.setAttribute('aria-expanded', 'false');
-
-        mobileMenuButton.addEventListener('click', (e) => {
-            const open = mobileMenu.classList.toggle('hidden'); // returns true when now hidden
-            const isOpen = !open;
-            mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
-            // bloquear scroll ao abrir
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-
-        // fechar ao clicar fora
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.classList.contains('hidden')) {
-                if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenuButton.setAttribute('aria-expanded', 'false');
-                    document.body.style.overflow = '';
-                }
-            }
-        });
-
-        // fechar com Esc
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                mobileMenuButton.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // se houver links dentro do menu, fechar ao clicar neles
-        mobileMenu.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuButton.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            });
-        });
-    }
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.setAttribute('aria-expanded','false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
 });
