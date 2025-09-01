@@ -26,7 +26,7 @@
             </a>
 
             <div class="hidden md:flex items-center space-x-6">
-                <a href="biblioteca.html" class="hover:text-theme-accent-yellow transition-colors duration-300 text-theme-primary">Biblioteca</a>
+                <a href="biblioteca.html" class="font-medium hover:text-theme-accent-yellow transition-colors duration-300 text-theme-primary">Biblioteca</a>
 
                 <form role="search" class="relative">
                     <label for="search-desktop" class="sr-only">Buscar</label>
@@ -39,8 +39,8 @@
 
             <div class="flex items-center space-x-2">
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="usuario.html" class="text-theme-primary hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
-                    <a href="cadastro.html" class="bg-theme-accent-yellow text-theme-on-accent font-bold py-2 px-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">Cadastre-se</a>
+                    <a href="usuario.html" class="font-medium text-theme-primary hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
+                    <a href="cadastro.html" class="bg-theme-accent-yellow text-theme-on-accent font-semibold py-2 px-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">Cadastre-se</a>
                 </div>
 
                 <button id="theme-toggle" class="p-2 rounded-full hover:bg-theme-background focus:outline-none" aria-label="Alternar tema">
@@ -64,37 +64,63 @@
                 </div>
             </form>
 
-            <a href="biblioteca.html" class="block hover:text-theme-accent-yellow transition-colors duration-300">Biblioteca</a>
-            <a href="usuario.html" class="block hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
-            <a href="cadastro.html" class="block bg-theme-accent-yellow text-theme-on-accent font-bold py-2 px-4 rounded-full text-center">Cadastre-se</a>
+            <a href="biblioteca.html" class="block font-medium hover:text-theme-accent-yellow transition-colors duration-300">Biblioteca</a>
+            <a href="usuario.html" class="block font-medium hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
+            <a href="cadastro.html" class="block bg-theme-accent-yellow text-theme-on-accent font-semibold py-2 px-4 rounded-full text-center">Cadastre-se</a>
         </div>
     </header>
 
     <main>
         <section class="relative hero-bg py-20 md:py-32 text-center">
             <div class="container mx-auto px-6">
-                <h1 class="font-title text-4xl md:text-6xl font-bold text-theme-primary leading-tight">Navegue por Galáxias de Histórias</h1>
-                <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-theme-secondary">Conecte-se com leitores, descubra autores emergentes e publique sua própria jornada literária no Literaverse.</p>
+                <h1 class="font-title text-4xl md:text-6xl font-bold text-theme-primary leading-tight tracking-tight">Navegue por Galáxias de Histórias</h1>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-theme-secondary leading-relaxed">Conecte-se com leitores, descubra autores emergentes e publique sua própria jornada literária no Literaverse.</p>
                 <div class="mt-8">
-                    <a href="biblioteca.html" class="bg-theme-accent-yellow text-theme-on-accent font-bold py-3 px-8 rounded-full text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-block">Explorar a Biblioteca</a>
+                    <a href="biblioteca.html" class="bg-theme-accent-yellow text-theme-on-accent font-semibold py-3 px-8 rounded-full text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-block">Explorar a Biblioteca</a>
                 </div>
             </div>
         </section>
 
         <section class="py-16 md:py-24">
             <div class="container mx-auto px-6">
-                <h2 class="font-title text-3xl md:text-4xl font-bold text-center mb-12 text-theme-primary">Recém-Chegados à Galáxia</h2>
+                <h2 class="font-title text-3xl md:text-4xl font-bold text-center mb-12 text-theme-primary tracking-tight">Recém-Chegados à Galáxia</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Card de Livro - imagem local -->
                     <div class="bg-theme-surface rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                         <img src="Imagens/capadomcasmurro.jpg" alt="Capa do livro Dom Casmurro" class="w-full h-64 object-cover">
                         <div class="p-6">
-                            <h3 class="font-title text-xl font-bold mb-2 text-theme-primary">Dom Casmurro</h3>
+                            <h3 class="text-xl font-semibold mb-1 text-theme-primary">Dom Casmurro</h3>
                             <p class="text-sm text-theme-secondary mb-4">Machado de Assis</p>
                             <a href="biblioteca.html" class="font-semibold text-theme-accent-yellow hover:underline">Ver Detalhes →</a>
                         </div>
                     </div>
-                    <!-- Repetir cards... -->
+                     <!-- Card de Livro 2 -->
+                    <div class="bg-theme-surface rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="Imagens/capaartedaguerra.jpg" alt="Capa do livro A Arte da Guerra" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-1 text-theme-primary">A Arte da Guerra</h3>
+                            <p class="text-sm text-theme-secondary mb-4">Sun Tzu</p>
+                            <a href="biblioteca.html" class="font-semibold text-theme-accent-yellow hover:underline">Ver Detalhes →</a>
+                        </div>
+                    </div>
+                     <!-- Card de Livro 3 -->
+                    <div class="bg-theme-surface rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="Imagens/capavidassecas.jpg" alt="Capa do livro Vidas Secas" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-1 text-theme-primary">Vidas Secas</h3>
+                            <p class="text-sm text-theme-secondary mb-4">Graciliano Ramos</p>
+                            <a href="biblioteca.html" class="font-semibold text-theme-accent-yellow hover:underline">Ver Detalhes →</a>
+                        </div>
+                    </div>
+                     <!-- Card de Livro 4 -->
+                    <div class="bg-theme-surface rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="Imagens/capaalicenopais.jpg" alt="Capa do livro Alice no País das Maravilhas" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-1 text-theme-primary">Alice no País das Maravilhas</h3>
+                            <p class="text-sm text-theme-secondary mb-4">Lewis Carroll</p>
+                            <a href="biblioteca.html" class="font-semibold text-theme-accent-yellow hover:underline">Ver Detalhes →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -105,7 +131,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start justify-items-center text-center">
                 <div class="max-w-xs">
                     <h4 class="font-semibold text-theme-primary mb-3">Sobre a Literaverse</h4>
-                    <p class="text-theme-secondary mb-2">Literaverse conecta leitores e autores em ambientes criativos e colaborativos.</p>
+                    <p class="text-theme-secondary mb-2 leading-relaxed">Literaverse conecta leitores e autores em ambientes criativos e colaborativos.</p>
                     <p class="text-theme-secondary text-sm">Rua das Letras, 123 — Cidade Literária</p>
                     <p class="text-theme-secondary text-sm mt-2">CNPJ: 00.000.000/0000-00</p>
                 </div>
@@ -140,7 +166,6 @@
         </div>
     </footer>
 
-    <!-- Antes: script inline removido; usar arquivo externo padronizado -->
     <script src="JS/script.js"></script>
 </body>
 </html>

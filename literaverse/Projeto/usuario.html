@@ -22,7 +22,7 @@
             </a>
 
             <div class="hidden md:flex items-center space-x-6">
-                <a href="biblioteca.html" class="hover:text-theme-accent-yellow transition-colors duration-300 text-theme-primary">Biblioteca</a>
+                <a href="biblioteca.html" class="font-medium hover:text-theme-accent-yellow transition-colors duration-300 text-theme-primary">Biblioteca</a>
 
                 <form role="search" class="relative">
                     <label for="search-desktop" class="sr-only">Buscar</label>
@@ -35,8 +35,8 @@
 
             <div class="flex items-center space-x-2">
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="usuario.html" class="text-theme-primary hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
-                    <a href="cadastro.html" class="bg-theme-accent-yellow text-theme-on-accent font-bold py-2 px-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">Cadastre-se</a>
+                    <a href="usuario.html" class="font-medium text-theme-primary hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
+                    <a href="cadastro.html" class="bg-theme-accent-yellow text-theme-on-accent font-semibold py-2 px-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">Cadastre-se</a>
                 </div>
 
                 <button id="theme-toggle" class="p-2 rounded-full hover:bg-theme-background focus:outline-none" aria-label="Alternar tema">
@@ -60,36 +60,36 @@
                 </div>
             </form>
 
-            <a href="biblioteca.html" class="block hover:text-theme-accent-yellow transition-colors duration-300">Biblioteca</a>
-            <a href="usuario.html" class="block hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
-            <a href="cadastro.html" class="block bg-theme-accent-yellow text-theme-on-accent font-bold py-2 px-4 rounded-full text-center">Cadastre-se</a>
+            <a href="biblioteca.html" class="block font-medium hover:text-theme-accent-yellow transition-colors duration-300">Biblioteca</a>
+            <a href="usuario.html" class="block font-medium hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
+            <a href="cadastro.html" class="block bg-theme-accent-yellow text-theme-on-accent font-semibold py-2 px-4 rounded-full text-center">Cadastre-se</a>
         </div>
     </header>
 
     <main class="container mx-auto px-6 py-12">
         <!-- Seção do Perfil -->
         <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
-            <img src="https://placehold.co/150x150/5f3f71/F4E927?text=User" alt="Foto do Usuário" class="rounded-full w-32 h-32 md:w-40 md:h-40 border-4 border-theme-accent-purple">
-            <div>
-                <h1 class="font-title text-4xl font-bold text-theme-primary">NomeDoUsuario</h1>
-                <p class="text-theme-secondary mt-2">Um explorador de mundos literários. Juntou-se em Agosto de 2025.</p>
-                <button class="mt-4 bg-theme-accent-yellow text-theme-on-accent font-bold py-2 px-4 rounded-full text-sm">Editar Perfil</button>
+            <img src="https://placehold.co/150x150/5f3f71/F4E927?text=User" alt="Foto do Usuário" class="rounded-full w-32 h-32 md:w-40 md:h-40 border-4 border-theme-accent-purple object-cover">
+            <div class="text-center md:text-left">
+                <h1 class="font-title text-4xl font-bold text-theme-primary tracking-tight">NomeDoUsuario</h1>
+                <p class="text-theme-secondary mt-2 leading-relaxed">Um explorador de mundos literários. Juntou-se em Agosto de 2025.</p>
+                <button class="mt-4 bg-theme-accent-yellow text-theme-on-accent font-semibold py-2 px-4 rounded-full text-sm">Editar Perfil</button>
             </div>
         </div>
 
         <!-- Seção: Minhas Obras -->
         <div class="mb-12">
-            <h2 class="font-title text-3xl font-bold text-theme-primary mb-6">Minhas Obras Publicadas</h2>
+            <h2 class="font-title text-3xl font-bold text-theme-primary mb-6 tracking-tight">Minhas Obras Publicadas</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Card de Obra do Usuário -->
                 <div class="bg-theme-surface rounded-lg p-4 text-center">
-                    <h3 class="font-title text-xl font-bold text-theme-primary">Crônicas de Marte</h3>
-                    <p class="text-sm text-theme-secondary mb-4">Em andamento</p>
+                    <h3 class="text-xl font-semibold text-theme-primary">Crônicas de Marte</h3>
+                    <p class="text-sm text-theme-secondary mb-4 mt-1">Em andamento</p>
                     <a href="#" class="font-semibold text-theme-accent-yellow hover:underline">Gerenciar</a>
                 </div>
                 <!-- Card para Nova Obra -->
                 <div class="border-2 border-dashed border-theme flex items-center justify-center rounded-lg min-h-[120px] hover:border-theme-accent-yellow transition-colors">
-                    <a href="#" class="text-theme-secondary hover:text-theme-primary">+ Publicar Nova Obra</a>
+                    <a href="#" class="font-medium text-theme-secondary hover:text-theme-primary">+ Publicar Nova Obra</a>
                 </div>
             </div>
         </div>
@@ -101,7 +101,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start justify-items-center text-center">
                 <div class="max-w-xs">
                     <h4 class="font-semibold text-theme-primary mb-3">Sobre a Literaverse</h4>
-                    <p class="text-theme-secondary mb-2">Literaverse conecta leitores e autores em ambientes criativos e colaborativos.</p>
+                    <p class="text-theme-secondary mb-2 leading-relaxed">Literaverse conecta leitores e autores em ambientes criativos e colaborativos.</p>
                     <p class="text-theme-secondary text-sm">Rua das Letras, 123 — Cidade Literária</p>
                     <p class="text-theme-secondary text-sm mt-2">CNPJ: 00.000.000/0000-00</p>
                 </div>
