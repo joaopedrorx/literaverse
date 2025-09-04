@@ -1,0 +1,214 @@
+@charset "UTF-8";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css");
+/* --- Fontes & Tipografia --- */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+
+/* --- Estilos Base e Fontes --- */
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte principal para o corpo */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fonte-titulo {
+    font-family: 'Lora', serif; /* Fonte de destaque para títulos */
+}
+
+/* Melhora a legibilidade dos parágrafos */
+p {
+    line-height: 1.7;
+}
+
+
+/* --- Tema Escuro (Padrão) --- */
+/* Aplicado diretamente nas classes de utilidade */
+.fundo-tema { background-color: #4A2A5A; }
+.fundo-superficie { background-color: #5f3f71; }
+.texto-primario { color: #f0eafc; }
+.texto-secundario { color: #E2B8E2; }
+.texto-destaque-amarelo { color: #F4E927; }
+.fundo-destaque-amarelo { background-color: #F4E927; }
+.borda-destaque-amarelo { --tw-ring-color: #F4E927; }
+.texto-destaque-roxo { color: #AF71FA; }
+.texto-sobre-destaque { color: #4A2A5A; }
+.borda-tema { border-color: #7a5a8e; }
+
+.fundo-heroi {
+    background-image: radial-gradient(circle at 20% 20%, rgba(175, 113, 250, 0.2), transparent 40%),
+                      radial-gradient(circle at 80% 70%, rgba(226, 184, 226, 0.15), transparent 40%);
+}
+
+/* --- Tema Claro (Sobrescreve o Padrão) --- */
+body.tema-claro {
+    --cor-fundo: #F5F3F7;
+    --cor-superficie: #FFFFFF;
+    --cor-texto-primario: #4A2A5A;
+    --cor-texto-secundario: #5f3f71;
+    --cor-destaque-amarelo: #E1AD01;
+    --cor-destaque-roxo: #8A2BE2;
+    --cor-texto-sobre-destaque: #FFFFFF;
+    --cor-borda: #e2dbe8;
+    --fundo-heroi-1: rgba(175, 113, 250, 0.1);
+    --fundo-heroi-2: rgba(74, 42, 90, 0.1);
+}
+
+body.tema-claro .fundo-tema { background-color: var(--cor-fundo); }
+body.tema-claro .fundo-superficie { background-color: var(--cor-superficie); }
+body.tema-claro .texto-primario { color: var(--cor-texto-primario); }
+body.tema-claro .texto-secundario { color: var(--cor-texto-secundario); }
+body.tema-claro .texto-destaque-amarelo { color: var(--cor-destaque-amarelo); }
+body.tema-claro .fundo-destaque-amarelo { background-color: var(--cor-destaque-amarelo); }
+body.tema-claro .borda-destaque-amarelo { --tw-ring-color: var(--cor-destaque-amarelo); }
+body.tema-claro .texto-destaque-roxo { color: var(--cor-destaque-roxo); }
+body.tema-claro .texto-sobre-destaque { color: var(--cor-texto-sobre-destaque); }
+body.tema-claro .borda-tema { border-color: var(--cor-borda); }
+
+body.tema-claro .fundo-heroi {
+    background-image: radial-gradient(circle at 20% 20%, var(--fundo-heroi-1), transparent 40%),
+                      radial-gradient(circle at 80% 70%, var(--fundo-heroi-2), transparent 40%);
+}
+
+/* --- Transições --- */
+.fundo-superficie, .fundo-destaque-amarelo, .fundo-tema {
+    transition: background-color 0.3s ease;
+}
+
+/* --- Tokens de tema e suporte light / dark --- */
+/* transição global */
+:root {
+  --duracao-transicao: 200ms;
+}
+
+/* Tokens de tema — garante cor de footer opaca */
+.tema-claro {
+  --tema-fundo: #e0dbe9;
+  --tema-primario: #4A2A5A;
+  --tema-destaque-roxo: #8A2BE2;
+  --tema-secundario: #5f3f71;
+  --tema-destaque-amarelo: #E1AD01;
+  --tema-sobre-destaque: #FFFFFF;
+  --tema-superficie: #e4d6f7;
+  --cor-fundo-rodape: var(--tema-superficie); /* footer opaco no modo claro */
+}
+
+.tema-escuro {
+  --tema-fundo: #071024;
+  --tema-primario: #E8EAFE;
+  --tema-secundario: #B8C3DB;
+  --tema-superficie: #0F1724;
+  --tema-destaque-amarelo: #F6C94C;
+  --tema-sobre-destaque: #0B1020;
+  --tema-destaque-roxo: #5B3EA6;
+  --cor-fundo-rodape: #0F1724; /* footer opaco no modo escuro */
+}
+
+/* Apply tokens */
+body {
+  transition: background-color var(--duracao-transicao), color var(--duracao-transicao);
+  background-color: var(--tema-fundo);
+  color: var(--tema-primario);
+}
+
+/* Utility classes usadas nos HTML */
+.fundo-tema { background-color: var(--tema-fundo); }
+.texto-primario { color: var(--tema-primario); }
+.texto-secundario { color: var(--tema-secundario); }
+.fundo-superficie { background-color: var(--tema-superficie); }
+.texto-destaque-amarelo { color: var(--tema-destaque-amarelo); }
+.fundo-destaque-amarelo { background-color: var(--tema-destaque-amarelo); }
+.texto-sobre-destaque { color: var(--tema-sobre-destaque); }
+.texto-destaque-roxo { color: var(--tema-destaque-roxo); }
+
+/* --- Estilos do Formulário Aprimorado --- */
+
+/* Contêiner para input e ícone */
+.grupo-entrada .relative {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo base dos inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    background-color: var(--tema-fundo);
+    color: var(--tema-primario);
+    border: 2px solid var(--borda-tema);
+    transition: border-color 0.2s ease-in-out;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--tema-destaque-roxo);
+}
+
+/* Estilos de validação */
+input.valido {
+    border-color: var(--tema-sucesso);
+}
+
+input.invalido {
+    border-color: var(--tema-erro);
+}
+
+/* Ícones de status (✓ e ✗) */
+.icone-status {
+    position: absolute;
+    right: 0.75rem;
+    pointer-events: none;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.grupo-entrada.valido .icone-status::after {
+    content: '✓';
+    color: var(--tema-sucesso);
+}
+
+.grupo-entrada.invalido .icone-status::after {
+    content: '✗';
+    color: var(--tema-erro);
+}
+/* Esconde o ícone de status no campo de senha quando o botão de visibilidade está presente */
+#password + button + .icone-status {
+    right: 2.5rem; /* Ajusta a posição para não sobrepor o botão de olho */
+}
+
+
+/* Mensagens de erro e sucesso */
+.mensagem-erro {
+    color: var(--tema-erro);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    min-height: 1.25rem; /* Evita que o layout pule */
+}
+
+.mensagem-sucesso {
+    color: var(--tema-sucesso);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* Checklist de força da senha */
+#verificacao-forca-senha li {
+    transition: color 0.2s ease-in-out;
+}
+
+#verificacao-forca-senha li.valido {
+    color: var(--tema-sucesso);
+    text-decoration: line-through;
+}
+
+#verificacao-forca-senha li.valido::before {
+    content: '✓ ';
+}
+
+#verificacao-forca-senha li::before {
+    content: '✗ ';
+}

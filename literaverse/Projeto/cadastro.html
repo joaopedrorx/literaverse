@@ -3,163 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastre-se - Literaverse</title>
-    <link rel="stylesheet" href="CSS/estilo.css">
+    <title>Cadastre-se - Literaverse (Aprimorado)</title>
+    <link rel="stylesheet" href="CSS/estilo_aprimorado.css">
     <link rel="icon" href="Favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="Favicon/favicon-16x16.png" sizes="16x16">
     <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#4A2A5A">
 </head>
-<body class="bg-theme-background text-theme-primary">
-    <header class="bg-theme-surface/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+<body class="fundo-tema texto-primario">
+    <header class="fundo-superficie/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center" role="navigation" aria-label="Menu principal">
             <a href="index.html" class="flex items-center space-x-2 flex-shrink-0">
                 <img src="Imagens/logo.png" alt="Literaverse" class="h-8 w-8 object-contain">
-                <span class="font-title text-2xl font-bold text-theme-primary">Literaverse</span>
+                <span class="fonte-titulo text-2xl font-bold texto-primario">Literaverse</span>
             </a>
-
             <div class="hidden md:flex items-center space-x-6">
-                <a href="biblioteca.html" class="font-medium hover:text-theme-accent-yellow transition-colors duration-300 text-theme-primary">Biblioteca</a>
-
-                <form role="search" class="relative">
-                    <label for="search-desktop" class="sr-only">Buscar</label>
-                    <input id="search-desktop" type="search" placeholder="Buscar..." class="bg-theme-background w-48 py-2 pl-10 pr-4 rounded-full text-theme-primary placeholder-gray-400 focus:outline-none focus:ring-2 ring-theme-accent-yellow">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
-                    </div>
-                </form>
+                <a href="biblioteca.html" class="font-medium hover:text-destaque-amarelo transition-colors duration-300 texto-primario">Biblioteca</a>
             </div>
-
             <div class="flex items-center space-x-2">
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="usuario.html" class="font-medium text-theme-primary hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
-                    <a href="cadastro.html" class="bg-theme-accent-yellow text-theme-on-accent font-semibold py-2 px-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">Cadastre-se</a>
+                    <a href="usuario.html" class="font-medium texto-primario hover:text-destaque-amarelo transition-colors duration-300">Login</a>
+                    <a href="cadastro.html" class="fundo-destaque-amarelo texto-sobre-destaque font-semibold py-2 px-4 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">Cadastre-se</a>
                 </div>
-
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-theme-background focus:outline-none" aria-label="Alternar tema">
-                    <svg id="theme-icon-sun" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-                    <svg id="theme-icon-moon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-                </button>
-
-                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                <button id="alternar-tema" class="p-2 rounded-full hover:fundo-tema focus:outline-none" aria-label="Alternar tema">
+                    <svg id="icone-sol" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <svg id="icone-lua" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
                 </button>
             </div>
         </nav>
-
-        <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-4" aria-hidden="true">
-            <form role="search" class="relative">
-                <label for="search-mobile" class="sr-only">Buscar</label>
-                <input id="search-mobile" type="search" placeholder="Buscar..." class="bg-theme-background w-full py-2 pl-10 pr-4 rounded-full text-theme-primary placeholder-gray-400 focus:outline-none focus:ring-2 ring-theme-accent-yellow">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                    <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
-                </div>
-            </form>
-
-            <a href="biblioteca.html" class="block font-medium hover:text-theme-accent-yellow transition-colors duration-300">Biblioteca</a>
-            <a href="usuario.html" class="block font-medium hover:text-theme-accent-yellow transition-colors duration-300">Login</a>
-            <a href="cadastro.html" class="block bg-theme-accent-yellow text-theme-on-accent font-semibold py-2 px-4 rounded-full text-center">Cadastre-se</a>
-        </div>
     </header>
 
     <main class="container mx-auto px-6 py-12">
-        <h1 class="font-title text-4xl md:text-5xl font-bold text-theme-primary mb-8 text-center tracking-tight">Crie sua conta</h1>
+        <h1 class="fonte-titulo text-4xl md:text-5xl font-bold texto-primario mb-8 text-center tracking-tight">Crie sua conta</h1>
 
-        <form id="cadastro-form" novalidate class="bg-theme-surface rounded-lg p-6 max-w-2xl mx-auto space-y-4" method="post" action="#">
-            <div>
-                <label for="fullName" class="block font-semibold text-theme-primary">Nome completo</label>
-                <input id="fullName" name="fullName" type="text" autocomplete="name" required minlength="2" class="w-full mt-2 p-3 rounded bg-theme-background text-theme-primary" aria-describedby="err-fullName">
-                <div id="err-fullName" class="text-sm text-red-400" aria-live="polite"></div>
+        <form id="formulario-cadastro" novalidate class="fundo-superficie rounded-lg p-6 max-w-2xl mx-auto space-y-4" method="post" action="#">
+            
+            <!-- Campo Nome Completo -->
+            <div class="grupo-entrada">
+                <label for="fullName" class="block font-semibold texto-primario">Nome completo</label>
+                <div class="relative">
+                    <input id="fullName" name="fullName" type="text" autocomplete="name" required minlength="2" class="w-full mt-2 p-3 pr-10 rounded fundo-tema texto-primario" aria-describedby="err-fullName">
+                    <span class="icone-status" aria-hidden="true"></span>
+                </div>
+                <div id="err-fullName" class="mensagem-erro" aria-live="polite"></div>
             </div>
 
-            <div>
-                <label for="username" class="block font-semibold text-theme-primary">Nome de usuário</label>
-                <input id="username" name="username" type="text" required pattern="^[a-zA-Z0-9._-]{3,24}$" autocomplete="username" class="w-full mt-2 p-3 rounded bg-theme-background text-theme-primary" aria-describedby="err-username">
-                <div id="err-username" class="text-sm text-theme-secondary mt-1">Use 3–24 caracteres: letras, números, . _ -</div>
+            <!-- Campo Nome de Usuário -->
+            <div class="grupo-entrada">
+                <label for="username" class="block font-semibold texto-primario">Nome de usuário</label>
+                <div class="relative">
+                    <input id="username" name="username" type="text" required pattern="^[a-zA-Z0-9._-]{3,24}$" autocomplete="username" class="w-full mt-2 p-3 pr-10 rounded fundo-tema texto-primario" aria-describedby="err-username">
+                     <span class="icone-status" aria-hidden="true"></span>
+                </div>
+                <div id="err-username" class="mensagem-erro" aria-live="polite">Use 3–24 caracteres: letras, números, . _ -</div>
             </div>
 
-            <div>
-                <label for="email" class="block font-semibold text-theme-primary">Email</label>
-                <input id="email" name="email" type="email" required autocomplete="email" class="w-full mt-2 p-3 rounded bg-theme-background text-theme-primary" aria-describedby="err-email">
-                <div id="err-email" class="text-sm text-red-400" aria-live="polite"></div>
+            <!-- Campo Email -->
+            <div class="grupo-entrada">
+                <label for="email" class="block font-semibold texto-primario">Email</label>
+                 <div class="relative">
+                    <input id="email" name="email" type="email" required autocomplete="email" class="w-full mt-2 p-3 pr-10 rounded fundo-tema texto-primario" aria-describedby="err-email">
+                    <span class="icone-status" aria-hidden="true"></span>
+                </div>
+                <div id="err-email" class="mensagem-erro" aria-live="polite"></div>
             </div>
 
-            <div>
-                <label for="birthdate" class="block font-semibold text-theme-primary">Data de nascimento</label>
-                <input id="birthdate" name="birthdate" type="date" required class="w-full mt-2 p-3 rounded bg-theme-background text-theme-primary" aria-describedby="err-birthdate">
-                <div id="err-birthdate" class="text-sm text-red-400" aria-live="polite"></div>
+            <!-- Campo Data de Nascimento -->
+            <div class="grupo-entrada">
+                <label for="birthdate" class="block font-semibold texto-primario">Data de nascimento</label>
+                <div class="relative">
+                    <input id="birthdate" name="birthdate" type="date" required class="w-full mt-2 p-3 pr-10 rounded fundo-tema texto-primario" aria-describedby="err-birthdate">
+                    <span class="icone-status" aria-hidden="true"></span>
+                </div>
+                <div id="err-birthdate" class="mensagem-erro" aria-live="polite"></div>
+            </div>
+            
+            <!-- Campo Senha -->
+            <div class="grupo-entrada">
+                <label for="password" class="block font-semibold texto-primario">Senha</label>
+                <div class="relative">
+                    <input id="password" name="password" type="password" required autocomplete="new-password" class="w-full mt-2 p-3 pr-10 rounded fundo-tema texto-primario" aria-describedby="err-password password-strength-checklist">
+                    <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 px-3 flex items-center text-gray-400 hover:texto-primario" aria-label="Mostrar senha">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="eye-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        <svg class="h-5 w-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="eye-off-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7 1.274-4.057 5.064-7 9.542-7 .847 0 1.673.124 2.468.358M17.875 6.125a9.03 9.03 0 013.667 5.875C20.268 16.057 16.477 19 12 19a9.02 9.02 0 01-1.343-.09M3 3l18 18" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="err-password" class="mensagem-erro" aria-live="polite"></div>
+                <ul id="verificacao-forca-senha" class="mt-2 text-sm space-y-1 texto-secundario">
+                    <li data-req="length">✗ Mínimo 12 caracteres</li>
+                    <li data-req="lowercase">✗ Pelo menos 1 letra minúscula</li>
+                    <li data-req="uppercase">✗ Pelo menos 1 letra maiúscula</li>
+                    <li data-req="number">✗ Pelo menos 1 número</li>
+                    <li data-req="special">✗ Pelo menos 1 caractere especial</li>
+                </ul>
+            </div>
+            
+            <!-- Campo Confirmar Senha -->
+            <div class="grupo-entrada">
+                <label for="confirmPassword" class="block font-semibold texto-primario">Confirmar senha</label>
+                <div class="relative">
+                    <input id="confirmPassword" name="confirmPassword" type="password" required autocomplete="new-password" class="w-full mt-2 p-3 pr-10 rounded fundo-tema texto-primario" aria-describedby="err-confirmPassword">
+                    <span class="icone-status" aria-hidden="true"></span>
+                </div>
+                <div id="err-confirmPassword" class="mensagem-erro" aria-live="polite"></div>
             </div>
 
-            <div>
-                <label for="password" class="block font-semibold text-theme-primary">Senha</label>
-                <input id="password" name="password" type="password" required autocomplete="new-password" class="w-full mt-2 p-3 rounded bg-theme-background text-theme-primary" aria-describedby="err-password help-password">
-                <div id="help-password" class="text-sm text-theme-secondary mt-1">Mínimo 12 caracteres, com maiúscula, minúscula, número e símbolo.</div>
-                <div id="err-password" class="text-sm text-red-400" aria-live="polite"></div>
-                <div id="password-strength" class="mt-2 text-sm" aria-hidden="true"></div>
+            <!-- Termos de Uso -->
+            <div class="flex items-start pt-2">
+                <input id="terms" name="terms" type="checkbox" required class="w-4 h-4 mt-1">
+                <label for="terms" class="text-sm texto-primario ml-2">Li e aceito os <a href="#" class="text-destaque-roxo underline">termos de uso</a> e a <a href="#" class="text-destaque-roxo underline">política de privacidade</a>.</label>
             </div>
-
-            <div>
-                <label for="confirmPassword" class="block font-semibold text-theme-primary">Confirmar senha</label>
-                <input id="confirmPassword" name="confirmPassword" type="password" required autocomplete="new-password" class="w-full mt-2 p-3 rounded bg-theme-background text-theme-primary" aria-describedby="err-confirmPassword">
-                <div id="err-confirmPassword" class="text-sm text-red-400" aria-live="polite"></div>
-            </div>
-
-            <div class="flex items-center space-x-2 pt-2">
-                <input id="terms" name="terms" type="checkbox" required class="w-4 h-4" aria-describedby="err-terms">
-                <label for="terms" class="text-sm text-theme-primary">Li e aceito os <a href="#" class="text-theme-accent-purple underline">termos de uso</a></label>
-            </div>
-            <div id="err-terms" class="text-sm text-red-400" aria-live="polite"></div>
+            <div id="err-terms" class="mensagem-erro" aria-live="polite"></div>
 
             <div class="pt-2">
-                <button id="submitBtn" type="submit" class="w-full bg-theme-accent-yellow text-theme-on-accent font-semibold py-3 px-6 rounded-full hover:shadow-md transition-all duration-300">Criar conta</button>
+                <button id="botao-enviar" type="submit" class="w-full fundo-destaque-amarelo texto-sobre-destaque font-semibold py-3 px-6 rounded-full hover:shadow-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">Criar conta</button>
             </div>
-
-            <div id="form-error" class="text-sm text-red-400" aria-live="polite"></div>
+            
+            <!-- Mensagem de sucesso do formulário -->
+            <div id="sucesso-formulario" class="mensagem-sucesso text-center" aria-live="polite"></div>
+            <div id="erro-formulario" class="mensagem-erro text-center font-bold" aria-live="assertive"></div>
         </form>
     </main>
 
     <footer class="bg-black/30 py-12 mt-16">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start justify-items-center text-center">
-                <div class="max-w-xs">
-                    <h4 class="font-semibold text-theme-primary mb-3">Sobre a Literaverse</h4>
-                    <p class="text-theme-secondary mb-2 leading-relaxed">Literaverse conecta leitores e autores em ambientes criativos e colaborativos.</p>
-                    <p class="text-theme-secondary text-sm">Rua das Letras, 123 — Cidade Literária</p>
-                    <p class="text-theme-secondary text-sm mt-2">CNPJ: 00.000.000/0000-00</p>
-                </div>
-
-                <div class="max-w-xs">
-                    <h4 class="font-semibold text-theme-primary mb-3">Contato</h4>
-                    <p class="text-theme-secondary mb-1">Email: <a href="mailto:contato@literaverse.example" class="underline text-theme-accent-purple">contato@literaverse.example</a></p>
-                    <p class="text-theme-secondary mb-1">Tel: (11) 5555-0000</p>
-                    <p class="text-theme-secondary text-sm mt-2">Horário fictício: Seg–Sex, 09:00–18:00</p>
-                </div>
-
-                <div class="max-w-xs">
-                    <h4 class="font-semibold text-theme-primary mb-3">Redes</h4>
-                    <div class="flex flex-col items-center gap-3">
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" class="flex items-center gap-2">
-                            <img src="Imagens/X.png" alt="X" class="h-6 w-6">
-                            <span class="text-theme-secondary">X (Twitter)</span>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Discord" class="flex items-center gap-2">
-                            <img src="Imagens/discord.png" alt="Discord" class="h-6 w-6">
-                            <span class="text-theme-secondary">Discord</span>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="flex items-center gap-2">
-                            <img src="Imagens/instagram.png" alt="Instagram" class="h-6 w-6">
-                            <span class="text-theme-secondary">Instagram</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <p class="mt-10 text-theme-secondary text-sm text-center">© 2025 Literaverse. Todos os direitos reservados.</p>
+        <div class="container mx-auto px-6 text-center">
+            <p class="texto-secundario text-sm">© 2025 Literaverse. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script src="JS/script.js"></script>
+    <script src="JS/script_aprimorado.js"></script>
 </body>
 </html>
