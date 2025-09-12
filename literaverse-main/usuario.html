@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Meu Perfil — Literaverse</title>
+    <link rel="stylesheet" href="CSS/estilo.css">
+    <link rel="icon" href="Favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="Favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body class="tema-claro">
+    <header class="cabecalho">
+        <div class="container cabecalho-grid">
+            <a href="index.html" class="logo" aria-label="Literaverse — página inicial">
+                <img src="Imagens/logo2.png" alt="Literaverse" class="logo-imagem">
+                <span class="logo-texto">Literaverse</span>
+            </a>
+
+            <nav class="nav-principal" aria-label="Navegação principal">
+                <ul class="lista-nav">
+                    <li><a class="link-nav" href="biblioteca.html">Biblioteca</a></li>
+                </ul>
+
+                <form class="form-busca" role="search" aria-label="Pesquisar no site">
+                    <label for="busca" class="apenas-leitura">Buscar</label>
+                    <svg class="icone-busca" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/>
+                        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <input id="busca" class="campo-busca" type="search" placeholder="Buscar..." />
+                </form>
+
+                <div class="acoes-usuario">
+                    <a href="usuario.html" class="botao-login">Login</a>
+                    <a href="cadastro.html" class="botao-cadastro">Cadastre-se</a>
+
+                    <button id="alternarTema" class="botao-tema" aria-label="Alternar tema">
+                        <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="4"/>
+                            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/>
+                        </svg>
+                        <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container conteudo-principal">
+        <div class="profile-section">
+            <img src="https://placehold.co/150x150/5f3f71/F4E927?text=User" alt="Foto do Usuário" class="profile-image">
+            <div class="profile-info">
+                <h1 class="profile-name fonte-titulo">NomeDoUsuario</h1>
+                <p class="profile-bio">Um explorador de mundos literários. Juntou-se em Agosto de 2025.</p>
+                <a href="#" class="botao-cadastro">Editar Perfil</a>
+            </div>
+        </div>
+
+        <section class="works-section">
+            <h2 class="titulo-secao fonte-titulo">Minhas Obras Publicadas</h2>
+            <div class="grid-livros">
+                <div class="cartao-livro">
+                    <h3 class="cartao-titulo">Crônicas de Marte</h3>
+                    <p class="cartao-status">Em andamento</p>
+                    <a href="#" class="cartao-acao">Gerenciar</a>
+                </div>
+                <div class="cartao-novo">
+                    <a href="#" class="cartao-novo-link">+ Publicar Nova Obra</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="grid-rodape">
+                <div class="coluna-rodape">
+                    <h4 class="titulo-rodape">Sobre a Literaverse</h4>
+                    <p>Literaverse conecta leitores e autores em ambientes criativos e colaborativos.</p>
+                </div>
+                <div class="coluna-rodape">
+                    <h4 class="titulo-rodape">Redes Sociais</h4>
+                    <div class="lista-redes">
+                            <a href="#" class="link-externo"><img src="Imagens/instagram.png" alt="Instagram" class="icone-rede"></a>
+                            <a href="#" class="link-externo"><img src="Imagens/X.png" alt="X" class="icone-rede"></a>
+                            <a href="#" class="link-externo"><img src="Imagens/discord.png" alt="Discord" class="icone-rede"></a>
+                        </div>
+                </div>
+                <div class="coluna-rodape">
+                    <h4 class="titulo-rodape">Contato</h4>
+                    <p>Email: <a href="mailto:contato@literaverse.example" class="link-destaque">contato@literaverse.example</a></p>
+                </div>
+            </div>
+            <p class="copyright texto-secundario">© 2025 Literaverse. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
