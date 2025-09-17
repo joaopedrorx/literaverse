@@ -6,33 +6,33 @@ document.addEventListener('DOMContentLoaded', () => {
   // ====== Menu Mobile ======
   const botaoMenu = document.getElementById('botaoMenu');
   const nav = document.getElementById('navMobile');
-  function fecharMenu(){
-    if(!botaoMenu || !nav) return;
+  function fecharMenu() {
+    if (!botaoMenu || !nav) return;
     botaoMenu.classList.remove('ativo');
     nav.classList.remove('aberta');
     body.classList.remove('menu-aberto');
-    botaoMenu.setAttribute('aria-expanded','false');
+    botaoMenu.setAttribute('aria-expanded', 'false');
   }
-  if (botaoMenu && nav){
+  if (botaoMenu && nav) {
     botaoMenu.addEventListener('click', () => {
       const aberto = botaoMenu.classList.toggle('ativo');
       nav.classList.toggle('aberta', aberto);
       body.classList.toggle('menu-aberto', aberto);
       botaoMenu.setAttribute('aria-expanded', aberto ? 'true' : 'false');
-      if(aberto){
+      if (aberto) {
         // focar primeiro link
         const primeiroLink = nav.querySelector('.lista-nav a, .acoes-usuario a, button');
-        if(primeiroLink) primeiroLink.focus({preventScroll:true});
+        if (primeiroLink) primeiroLink.focus({ preventScroll: true });
       }
     });
     // Fechar ao apertar ESC
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') fecharMenu(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharMenu(); });
     // Fechar ao clicar fora
-    document.addEventListener('click', (e)=>{
-      if(!nav.contains(e.target) && e.target !== botaoMenu && botaoMenu.classList.contains('ativo')) { fecharMenu(); botaoMenu.focus({preventScroll:true}); }
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && e.target !== botaoMenu && botaoMenu.classList.contains('ativo')) { fecharMenu(); botaoMenu.focus({ preventScroll: true }); }
     });
     // Ajustar ao redimensionar (voltar para desktop sem estado preso)
-    window.addEventListener('resize', ()=>{ if(window.innerWidth > 820 && botaoMenu.classList.contains('ativo')) { fecharMenu(); botaoMenu.focus({preventScroll:true}); } });
+    window.addEventListener('resize', () => { if (window.innerWidth > 820 && botaoMenu.classList.contains('ativo')) { fecharMenu(); botaoMenu.focus({ preventScroll: true }); } });
   }
   // =========================
 
@@ -68,6 +68,22 @@ document.addEventListener('DOMContentLoaded', () => {
     campoBusca.addEventListener('focus', () => { if (window.innerWidth < 768) campoBusca.style.width = '180px'; });
     campoBusca.addEventListener('blur', () => { if (window.innerWidth < 768) campoBusca.style.width = ''; });
   }
+
+  // Funcionalidade mostrar/ocultar senha
+  const botoesMostrarSenha = document.querySelectorAll('.botao-mostrar-senha');
+  botoesMostrarSenha.forEach(botao => {
+    botao.addEventListener('click', () => {
+      const targetId = botao.getAttribute('data-target');
+      const campoSenha = document.getElementById(targetId);
+
+      if (campoSenha) {
+        const isPassword = campoSenha.type === 'password';
+        campoSenha.type = isPassword ? 'text' : 'password';
+        botao.classList.toggle('ativo', isPassword);
+        botao.setAttribute('aria-label', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+      }
+    });
+  });
 
   // Formulário de cadastro
   const formCadastro = document.getElementById('formulario-cadastro');

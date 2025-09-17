@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,6 +9,7 @@
     <link rel="icon" href="Favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="Favicon/favicon-16x16.png" sizes="16x16">
 </head>
+
 <body class="tema-claro pagina-cadastro">
     <header class="cabecalho">
         <div class="container cabecalho-grid">
@@ -16,7 +18,8 @@
                 <span class="logo-texto">Literaverse</span>
             </a>
 
-            <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMobile">
+            <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="navMobile">
                 <span class="barra" aria-hidden="true"></span>
                 <span class="barra" aria-hidden="true"></span>
                 <span class="barra" aria-hidden="true"></span>
@@ -30,8 +33,8 @@
                 <form class="form-busca" role="search" aria-label="Pesquisar no site">
                     <label for="busca" class="apenas-leitura">Buscar</label>
                     <svg class="icone-busca" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/>
-                        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" />
+                        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
                     <input id="busca" class="campo-busca" type="search" placeholder="Buscar..." />
                 </form>
@@ -40,73 +43,104 @@
                     <a href="usuario.html" class="botao-login">Login</a>
                     <a href="cadastro.html" class="botao-cadastro">Cadastre-se</a>
 
-                                <button id="alternarTema" class="botao-tema" aria-label="Alternar tema">
-                                    <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <circle cx="12" cy="12" r="4"/>
-                            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/>
+                    <button id="alternarTema" class="botao-tema" aria-label="Alternar tema">
+                        <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="4" />
+                            <path
+                                d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
                         </svg>
-                                    <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                        <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
                         </svg>
-                                </button>
+                    </button>
                 </div>
             </nav>
         </div>
     </header>
 
-        <main class="container conteudo-principal">
-            <h1 class="titulo-pagina fonte-titulo">Crie sua conta</h1>
+    <main class="container conteudo-principal">
+        <h1 class="titulo-pagina fonte-titulo">Crie sua conta</h1>
 
-            <form id="formulario-cadastro" novalidate method="post" action="#" class="registration-form">
-                <div class="grupo-entrada">
-                    <label for="nome" class="form-label">Nome completo</label>
-                    <input id="nome" name="nome" class="form-input" type="text" />
-                    <div id="erro-nome" class="mensagem-erro" aria-live="polite"></div>
-                </div>
+        <form id="formulario-cadastro" novalidate method="post" action="#" class="registration-form">
+            <div class="grupo-entrada">
+                <label for="nome" class="form-label">Nome completo</label>
+                <input id="nome" name="nome" class="form-input" type="text" />
+                <div id="erro-nome" class="mensagem-erro" aria-live="polite"></div>
+            </div>
 
-                <div class="grupo-entrada">
-                    <label for="usuario" class="form-label">Nome de usuário</label>
-                    <input id="usuario" name="usuario" class="form-input" type="text" />
-                    <div id="erro-usuario" class="mensagem-erro" aria-live="polite"></div>
-                </div>
+            <div class="grupo-entrada">
+                <label for="usuario" class="form-label">Nome de usuário</label>
+                <input id="usuario" name="usuario" class="form-input" type="text" />
+                <div id="erro-usuario" class="mensagem-erro" aria-live="polite"></div>
+            </div>
 
-                <div class="grupo-entrada">
-                    <label for="email" class="form-label">Email</label>
-                    <input id="email" name="email" class="form-input" type="email" placeholder="exemplo@email.com" />
-                    <div id="erro-email" class="mensagem-erro" aria-live="polite"></div>
-                </div>
+            <div class="grupo-entrada">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" class="form-input" type="email" placeholder="exemplo@email.com" />
+                <div id="erro-email" class="mensagem-erro" aria-live="polite"></div>
+            </div>
 
-                <div class="grupo-entrada">
-                    <label for="nascimento" class="form-label">Data de nascimento</label>
-                    <input id="nascimento" name="nascimento" class="form-input" type="date" />
-                    <div id="erro-nascimento" class="mensagem-erro" aria-live="polite"></div>
-                </div>
+            <div class="grupo-entrada">
+                <label for="nascimento" class="form-label">Data de nascimento</label>
+                <input id="nascimento" name="nascimento" class="form-input" type="date" />
+                <div id="erro-nascimento" class="mensagem-erro" aria-live="polite"></div>
+            </div>
 
-                <div class="grupo-entrada">
-                    <label for="senha" class="form-label">Senha</label>
+            <div class="grupo-entrada">
+                <label for="senha" class="form-label">Senha</label>
+                <div class="campo-senha-container">
                     <input id="senha" name="senha" class="form-input" type="password" />
-                    <div id="erro-senha" class="mensagem-erro" aria-live="polite"></div>
+                    <button type="button" class="botao-mostrar-senha" aria-label="Mostrar senha" data-target="senha">
+                        <svg class="icone-olho-fechado" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                            <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+                            <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+                            <line x1="2" y1="2" x2="22" y2="22" />
+                        </svg>
+                        <svg class="icone-olho-aberto" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </button>
                 </div>
+                <div id="erro-senha" class="mensagem-erro" aria-live="polite"></div>
+            </div>
 
-                <div class="grupo-entrada">
-                    <label for="confirmar-senha" class="form-label">Confirmar senha</label>
+            <div class="grupo-entrada">
+                <label for="confirmar-senha" class="form-label">Confirmar senha</label>
+                <div class="campo-senha-container">
                     <input id="confirmar-senha" name="confirmar-senha" class="form-input" type="password" />
-                    <div id="erro-confirmar-senha" class="mensagem-erro" aria-live="polite"></div>
+                    <button type="button" class="botao-mostrar-senha" aria-label="Mostrar senha"
+                        data-target="confirmar-senha">
+                        <svg class="icone-olho-fechado" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                            <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+                            <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+                            <line x1="2" y1="2" x2="22" y2="22" />
+                        </svg>
+                        <svg class="icone-olho-aberto" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </button>
                 </div>
+                <div id="erro-confirmar-senha" class="mensagem-erro" aria-live="polite"></div>
+            </div>
 
-                <div class="terms">
-                    <input id="termos" name="termos" type="checkbox" class="terms__input" />
-                    <label for="termos" class="terms__label">Li e aceito os <a href="#" class="link-destaque">termos de uso</a> e a <a href="#" class="link-destaque">política de privacidade</a>.</label>
-                </div>
+            <div class="terms">
+                <input id="termos" name="termos" type="checkbox" class="terms__input" />
+                <label for="termos" class="terms__label">Li e aceito os <a href="#" class="link-destaque">termos de
+                        uso</a> e a <a href="#" class="link-destaque">política de privacidade</a>.</label>
+            </div>
 
-                <div style="padding-top:8px">
-                    <button id="botao-enviar" type="submit" class="submit-button botao-cadastro">Criar conta</button>
-                </div>
+            <div style="padding-top:8px">
+                <button id="botao-enviar" type="submit" class="submit-button botao-cadastro">Criar conta</button>
+            </div>
 
-                <div id="sucesso-formulario" class="mensagem-sucesso" aria-live="polite"></div>
-                <div id="erro-formulario" class="mensagem-erro" aria-live="assertive"></div>
-            </form>
-        </main>
+            <div id="sucesso-formulario" class="mensagem-sucesso" aria-live="polite"></div>
+            <div id="erro-formulario" class="mensagem-erro" aria-live="assertive"></div>
+        </form>
+    </main>
 
     <footer class="rodape">
         <div class="container">
@@ -120,7 +154,8 @@
 
                 <div class="coluna-rodape">
                     <h4 class="titulo-rodape">Contato</h4>
-                    <p>Email: <a href="mailto:contato@literaverse.example" class="link-destaque">contato@literaverse.example</a></p>
+                    <p>Email: <a href="mailto:contato@literaverse.example"
+                            class="link-destaque">contato@literaverse.example</a></p>
                     <p>Tel: (11) 5555-0000</p>
                     <p>Horário: Seg–Sex, 09:00–18:00</p>
                 </div>
@@ -128,9 +163,12 @@
                 <div class="coluna-rodape">
                     <h4 class="titulo-rodape">Redes Sociais</h4>
                     <div class="lista-redes">
-                        <a href="https://www.instagram.com/" class="link-externo"><img src="Imagens/instagram.png" alt="Instagram" class="icone-rede"></a>
-                        <a href="https://x.com/" class="link-externo"><img src="Imagens/X.png" alt="X" class="icone-rede"></a>
-                        <a href="https://discord.com/" class="link-externo"><img src="Imagens/discord.png" alt="Discord" class="icone-rede"></a>
+                        <a href="https://www.instagram.com/" class="link-externo"><img src="Imagens/instagram.png"
+                                alt="Instagram" class="icone-rede"></a>
+                        <a href="https://x.com/" class="link-externo"><img src="Imagens/X.png" alt="X"
+                                class="icone-rede"></a>
+                        <a href="https://discord.com/" class="link-externo"><img src="Imagens/discord.png" alt="Discord"
+                                class="icone-rede"></a>
                     </div>
                 </div>
             </div>
@@ -141,4 +179,5 @@
 
     <script src="JS/script.js"></script>
 </body>
+
 </html>
