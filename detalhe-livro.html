@@ -12,49 +12,52 @@
 </head>
 <body class="tema-claro">
     <header class="cabecalho">
-        <div class="container cabecalho-grid">
-            <a href="index.html" class="logo" aria-label="Literaverse — página inicial">
-                <img src="Imagens/logo2.png" alt="Literaverse" class="logo-imagem">
-                <span class="logo-texto">Literaverse</span>
-            </a>
+            <div class="container cabecalho-grid">
+                <a href="index.html" class="logo" aria-label="Literaverse — página inicial">
+                    <img src="Imagens/logo2.png" alt="Literaverse" class="logo-imagem">
+                    <span class="logo-texto">Literaverse</span>
+                </a>
 
-            <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMobile">
-                <span class="barra" aria-hidden="true"></span>
-                <span class="barra" aria-hidden="true"></span>
-                <span class="barra" aria-hidden="true"></span>
-            </button>
+                <!-- Botão Hamburguer (mobile) -->
+                <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMobile">
+                    <span class="barra" aria-hidden="true"></span>
+                    <span class="barra" aria-hidden="true"></span>
+                    <span class="barra" aria-hidden="true"></span>
+                </button>
 
-            <nav class="nav-principal" aria-label="Navegação principal" id="navMobile">
-                <ul class="lista-nav">
-                    <li><a class="link-nav" href="biblioteca.html">Biblioteca</a></li>
-                </ul>
+                <nav class="nav-principal" aria-label="Navegação principal" id="navMobile">
 
-                <form class="form-busca" role="search" aria-label="Pesquisar no site">
-                    <label for="busca" class="apenas-leitura">Buscar</label>
-                    <svg class="icone-busca" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/>
-                        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    <input id="busca" class="campo-busca" type="search" placeholder="Buscar..." />
-                </form>
-
-                <div class="acoes-usuario">
-                    <a href="usuario.html" class="botao-login">Login</a>
-                    <a href="cadastro.html" class="botao-cadastro">Cadastre-se</a>
-
-                    <button id="alternarTema" class="botao-tema" aria-label="Alternar tema">
-                        <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <circle cx="12" cy="12" r="4"/>
-                            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/>
+                    <form class="form-busca" role="search" aria-label="Pesquisar no site">
+                        <label for="busca" class="apenas-leitura">Buscar</label>
+                        <svg class="icone-busca" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/>
+                            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
-                        <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-                        </svg>
-                    </button>
-                </div>
-            </nav>
-        </div>
-    </header>
+                        <input id="busca" class="campo-busca" type="search" placeholder="Buscar..." />
+                    </form>
+
+                    <ul class="lista-nav">
+                        <li><a class="botao-cadastro" href="biblioteca.html">Biblioteca</a></li>
+                    </ul>
+
+                    <div class="acoes-usuario">
+                        <a href="cadastro.html" class="botao-cadastro">Publicar</a>
+                        <a href="usuario.html" class="botao-cadastro">Registrar/Logar</a>
+                        
+
+                        <button id="alternarTema" class="botao-tema" aria-label="Alternar tema">
+                            <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="4"/>
+                                <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/>
+                            </svg>
+                            <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
     <main class="container conteudo-principal detalhe-livro">
         <div class="detalhe-grid">
@@ -111,15 +114,12 @@
                 <div class="coluna-rodape">
                     <h4 class="titulo-rodape">Sobre a Literaverse</h4>
                     <p>Literaverse conecta leitores e autores em ambientes criativos e colaborativos.</p>
-                    <p>Rua das Letras, 123 — Cidade Literária</p>
-                    <p>CNPJ: 00.000.000/0000-00</p>
                 </div>
 
                 <div class="coluna-rodape">
                     <h4 class="titulo-rodape">Contato</h4>
                     <p>Email: <a href="mailto:contato@literaverse.example" class="link-destaque">contato@literaverse.example</a></p>
-                    <p>Tel: (11) 5555-0000</p>
-                    <p>Horário: Seg–Sex, 09:00–18:00</p>
+                    <p>Tel: (00) 9 0000-0000</p>
                 </div>
 
                 <div class="coluna-rodape">

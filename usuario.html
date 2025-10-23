@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,6 +11,7 @@
     <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
 </head>
+
 <body class="tema-claro">
     <header class="cabecalho">
         <div class="container cabecalho-grid">
@@ -18,37 +20,42 @@
                 <span class="logo-texto">Literaverse</span>
             </a>
 
-            <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMobile">
+            <!-- Botão Hamburguer (mobile) -->
+            <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="navMobile">
                 <span class="barra" aria-hidden="true"></span>
                 <span class="barra" aria-hidden="true"></span>
                 <span class="barra" aria-hidden="true"></span>
             </button>
 
             <nav class="nav-principal" aria-label="Navegação principal" id="navMobile">
-                <ul class="lista-nav">
-                    <li><a class="link-nav" href="biblioteca.html">Biblioteca</a></li>
-                </ul>
 
                 <form class="form-busca" role="search" aria-label="Pesquisar no site">
                     <label for="busca" class="apenas-leitura">Buscar</label>
                     <svg class="icone-busca" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/>
-                        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" />
+                        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
                     <input id="busca" class="campo-busca" type="search" placeholder="Buscar..." />
                 </form>
 
+                <ul class="lista-nav">
+                    <li><a class="botao-cadastro" href="biblioteca.html">Biblioteca</a></li>
+                </ul>
+
                 <div class="acoes-usuario">
-                    <a href="usuario.html" class="botao-login">Login</a>
-                    <a href="cadastro.html" class="botao-cadastro">Cadastre-se</a>
+                    <a href="cadastro.html" class="botao-cadastro">Publicar</a>
+                    <a href="usuario.html" class="botao-cadastro">Registrar/Logar</a>
+
 
                     <button id="alternarTema" class="botao-tema" aria-label="Alternar tema">
                         <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <circle cx="12" cy="12" r="4"/>
-                            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/>
+                            <circle cx="12" cy="12" r="4" />
+                            <path
+                                d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
                         </svg>
                         <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
                         </svg>
                     </button>
                 </div>
@@ -56,29 +63,76 @@
         </div>
     </header>
 
-    <main class="container conteudo-principal">
-        <div class="profile-section">
-            <img src="https://placehold.co/150x150/5f3f71/F4E927?text=User" alt="Foto do Usuário" class="profile-image">
-            <div class="profile-info">
-                <h1 class="profile-name fonte-titulo">NomeDoUsuario</h1>
-                <p class="profile-bio">Um explorador de mundos literários. Juntou-se em Agosto de 2025.</p>
-                <a href="#" class="botao-cadastro">Editar Perfil</a>
-            </div>
-        </div>
+    <main class="perfil-container">
+        <aside class="perfil-sidebar">
+            <div class="perfil-info-container">
+                <img src="https://placehold.co/150x150/5f3f71/F4E927?text=User" alt="Foto do Usuário"
+                    class="perfil-avatar">
+                <h1 class="perfil-nome fonte-titulo">NomeDoUsuario</h1>
+                <p class="perfil-bio">Um explorador de mundos literários. Juntou-se em Agosto de 2025.</p>
+                <button class="botao-editar">Editar Perfil</button>
 
-        <section class="works-section">
-            <h2 class="titulo-secao fonte-titulo">Minhas Obras Publicadas</h2>
-            <div class="grid-livros">
-                <div class="cartao-livro">
-                    <h3 class="cartao-titulo">Crônicas de Marte</h3>
-                    <p class="cartao-status">Em andamento</p>
-                    <a href="#" class="cartao-acao">Gerenciar</a>
-                </div>
-                <div class="cartao-novo">
-                    <a href="#" class="cartao-novo-link">+ Publicar Nova Obra</a>
+                <div class="perfil-stats">
+                    <div class="stat-item">
+                        <span class="stat-numero">12</span>
+                        <span class="stat-label">Obras Publicadas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-numero">45</span>
+                        <span class="stat-label">Livros Lidos</span>
+                    </div>
                 </div>
             </div>
-        </section>
+        </aside>
+
+        <div class="perfil-conteudo">
+            <section class="secao-obras">
+                <div class="secao-header">
+                    <h2 class="titulo-secao fonte-titulo">Minhas Obras Publicadas</h2>
+                    <a href="#" class="botao-adicionar">+ Publicar Nova Obra</a>
+                </div>
+
+                <div class="grid-obras">
+                    <div class="cartao-obra">
+                        <h3 class="obra-titulo">Crônicas de Marte</h3>
+                        <p class="obra-status">Em andamento</p>
+                        <div class="obra-meta">
+                            <span class="obra-capitulos">12 capítulos</span>
+                            <span class="obra-leituras">1.2k leituras</span>
+                        </div>
+                        <a href="#" class="botao-gerenciar">Gerenciar</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-leituras">
+                <div class="secao-header">
+                    <h2 class="titulo-secao fonte-titulo">Últimas Leituras</h2>
+                    <a href="#" class="botao-ver-todos">Ver Biblioteca Pessoal</a>
+                </div>
+
+                <div class="grid-leituras">
+                    <div class="cartao-livro">
+                        <img src="Imagens/capadomcasmurro.jpg" alt="Dom Casmurro" class="capa-livro">
+                        <div class="livro-info">
+                            <h3 class="livro-titulo">Dom Casmurro</h3>
+                            <p class="livro-autor">Machado de Assis</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-favoritos">
+                <div class="secao-header">
+                    <h2 class="titulo-secao fonte-titulo">Meus Favoritos</h2>
+                    <a href="#" class="botao-ver-todos">Ver Todos</a>
+                </div>
+
+                <div class="grid-favoritos">
+                    <!-- Grid de livros favoritos aqui -->
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer class="rodape">
@@ -87,23 +141,24 @@
                 <div class="coluna-rodape">
                     <h4 class="titulo-rodape">Sobre a Literaverse</h4>
                     <p>Literaverse conecta leitores e autores em ambientes criativos e colaborativos.</p>
-                    <p>Rua das Letras, 123 — Cidade Literária</p>
-                    <p>CNPJ: 00.000.000/0000-00</p>
                 </div>
 
                 <div class="coluna-rodape">
                     <h4 class="titulo-rodape">Contato</h4>
-                    <p>Email: <a href="mailto:contato@literaverse.example" class="link-destaque">contato@literaverse.example</a></p>
-                    <p>Tel: (11) 5555-0000</p>
-                    <p>Horário: Seg–Sex, 09:00–18:00</p>
+                    <p>Email: <a href="mailto:contato@literaverse.example"
+                            class="link-destaque">contato@literaverse.example</a></p>
+                    <p>Tel: (00) 9 0000-0000</p>
                 </div>
 
                 <div class="coluna-rodape">
                     <h4 class="titulo-rodape">Redes Sociais</h4>
                     <div class="lista-redes">
-                        <a href="https://www.instagram.com/" class="link-externo"><img src="Imagens/instagram.png" alt="Instagram" class="icone-rede"></a>
-                        <a href="https://x.com/" class="link-externo"><img src="Imagens/X.png" alt="X" class="icone-rede"></a>
-                        <a href="https://discord.com/" class="link-externo"><img src="Imagens/discord.png" alt="Discord" class="icone-rede"></a>
+                        <a href="https://www.instagram.com/" class="link-externo"><img src="Imagens/instagram.png"
+                                alt="Instagram" class="icone-rede"></a>
+                        <a href="https://x.com/" class="link-externo"><img src="Imagens/X.png" alt="X"
+                                class="icone-rede"></a>
+                        <a href="https://discord.com/" class="link-externo"><img src="Imagens/discord.png" alt="Discord"
+                                class="icone-rede"></a>
                     </div>
                 </div>
             </div>
@@ -114,4 +169,5 @@
 
     <script src="JS/script.js"></script>
 </body>
+
 </html>
