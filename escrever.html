@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Detalhes do Livro — Literaverse</title>
+    <title>Escrever — Literaverse</title>
     <link rel="stylesheet" href="CSS/base.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/layout.css">
@@ -12,13 +12,12 @@
     <link rel="stylesheet" href="CSS/cards.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="CSS/editor.css">
     <link rel="icon" href="Favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" href="Favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
 </head>
 
-<body class="tema-claro">
+<body class="tema-claro pagina-escrever">
+
     <header class="cabecalho">
         <div class="container cabecalho-grid">
             <a href="index.html" class="logo" aria-label="Literaverse — página inicial">
@@ -53,7 +52,6 @@
                     <a href="cadastro.html" class="botao-cadastro">Publicar</a>
                     <a href="usuario.html" class="botao-cadastro">Registrar/Logar</a>
 
-
                     <button id="alternarTema" class="botao-tema" aria-label="Alternar tema">
                         <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <circle cx="12" cy="12" r="4" />
@@ -69,57 +67,87 @@
         </div>
     </header>
 
-    <main class="container conteudo-principal detalhe-livro">
-        <div class="detalhe-grid">
-            <aside class="detalhe-imagem">
-                <img src="Imagens/capadomcasmurro.jpg" alt="Capa do livro" class="imagem-livro-detalhe">
-                <div class="metadados">
-                    <p><strong>Autor:</strong> Machado de Assis</p>
-                    <p><strong>Editora:</strong> Exemplo Editorial</p>
-                    <p><strong>Ano:</strong> 1899</p>
-                    <p><strong>Páginas:</strong> 256</p>
+    <main class="container conteudo-principal escrever-main">
+        <h1 class="titulo-pagina fonte-titulo">Escrever</h1>
+
+        <div class="editor-container">
+            <div class="toolbar" role="toolbar" aria-label="Barra de ferramentas do editor">
+                <select id="fontSize" title="Tamanho da fonte">
+                    <option value="16">16px</option>
+                    <option value="18">18px</option>
+                    <option value="20">20px</option>
+                    <option value="24">24px</option>
+                    <option value="32">32px</option>
+                </select>
+
+                <button data-cmd="bold" title="Negrito"><strong>B</strong></button>
+                <button data-cmd="italic" title="Itálico"><em>I</em></button>
+                <button data-cmd="underline" title="Sublinhado"><u>U</u></button>
+                <button data-cmd="strikeThrough" title="Tachado">S</button>
+
+                <button data-cmd="insertUnorderedList" title="Lista">• Lista</button>
+                <button data-cmd="insertOrderedList" title="Lista Numerada">1. Lista</button>
+
+                <button data-cmd="formatBlock" data-value="h1" title="Título">H1</button>
+                <button data-cmd="formatBlock" data-value="h2" title="Subtítulo">H2</button>
+                <button data-cmd="formatBlock" data-value="p" title="Parágrafo">P</button>
+
+                <button id="inserirLink" title="Inserir link">Link</button>
+                <button id="inserirImagem" title="Inserir imagem">Imagem</button>
+
+                <button id="desfazer" title="Desfazer">↶</button>
+                <button id="refazer" title="Refazer">↷</button>
+
+                <button id="btnRascunhos" class="botao-acao" title="Rascunhos">Rascunhos</button>
+                <button id="salvarRascunho" class="botao-cadastro">Salvar rascunho</button>
+                <button id="baixar" class="botao-cadastro">Baixar</button>
+            </div>
+
+            <div id="editor" class="editor" contenteditable="true" aria-label="Área de edição" spellcheck="true"
+                data-placeholder="Comece a escrever sua história aqui..."></div>
+
+            <!-- Painel lateral de rascunhos -->
+            <aside id="rascunhosPanel" class="rascunhos-panel" aria-hidden="true">
+                <div class="rascunhos-header">
+                    <h3>Rascunhos</h3>
+                    <button id="fecharRascunhos" aria-label="Fechar">✕</button>
+                </div>
+                <ul id="listaRascunhos" class="lista-rascunhos"></ul>
+                <div class="rascunhos-actions">
+                    <button id="novaVersao" class="botao-acao">Novo rascunho</button>
                 </div>
             </aside>
 
-            <section class="detalhe-info">
-                <h1 class="titulo-livro fonte-titulo">Dom Casmurro</h1>
-                <p class="subtitulo-livro">Machado de Assis — Romance clássico</p>
-
-                <div class="acoes-livro" role="toolbar" aria-label="Ações do livro">
-                    <button class="botao-acao" id="curtirLivro" aria-pressed="false">Curtir</button>
-                    <a class="botao-acao" href="#" download>Download</a>
-                </div>
-
-                <div class="sinopse">
-                    <h2 class="titulo-secao fonte-titulo">Sinopse</h2>
-                    <p>Dom Casmurro é um romance que explora as memórias de Bento Santiago sobre sua juventude e seu
-                        relacionamento com Capitu. A obra aborda temas como ciúme, memória e subjetividade.</p>
-                </div>
-
-                <div class="notas">
-                    <h3>Minhas notas</h3>
-                    <textarea class="form-input" id="notasLivro" rows="6"
-                        placeholder="Escreva suas notas pessoais sobre este livro..."></textarea>
-                    <div style="padding-top:.5rem"><button class="botao-cadastro" id="salvarNotas">Salvar notas</button>
-                    </div>
-                </div>
-
-                <div class="comentarios">
-                    <h3>Comentários</h3>
-                    <form id="form-comentario" class="form-comentario">
-                        <label for="novo-comentario" class="apenas-leitura">Novo comentário</label>
-                        <textarea id="novo-comentario" class="form-input" rows="3"
-                            placeholder="Escreva um comentário público..."></textarea>
-                        <div style="padding-top:.5rem"><button type="submit" class="botao-acao">Comentar</button></div>
+            <!-- Modal inserir link / imagem -->
+            <div id="modalInserir" class="modal" aria-hidden="true">
+                <div class="modal-conteudo" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+                    <h2 id="modalTitulo">Inserir</h2>
+                    <form id="formInserir">
+                        <div class="form-row">
+                            <label for="tipoInserir">Tipo</label>
+                            <select id="tipoInserir">
+                                <option value="link">Link</option>
+                                <option value="imagem">Imagem</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="urlInserir">URL</label>
+                            <input id="urlInserir" type="url" required placeholder="https://exemplo.com" />
+                        </div>
+                        <div class="form-row opcional-texto">
+                            <label for="textoInserir">Texto (opcional)</label>
+                            <input id="textoInserir" type="text"
+                                placeholder="Texto do link (se vazio usará o URL ou seleção)" />
+                        </div>
+                        <div class="modal-actions">
+                            <button type="submit" class="botao-cadastro">Inserir</button>
+                            <button type="button" id="cancelarInserir" class="botao-acao">Cancelar</button>
+                        </div>
                     </form>
-
-                    <ul class="lista-comentarios">
-                        <li class="comentario"><strong>Ana</strong> — Adorei a construção dos personagens.</li>
-                        <li class="comentario"><strong>Pedro</strong> — Um clássico atemporal.</li>
-                    </ul>
                 </div>
-            </section>
+            </div>
         </div>
+
     </main>
 
     <footer class="rodape">
@@ -154,6 +182,7 @@
         </div>
     </footer>
 
+    <script src="JS/editor.js"></script>
     <script src="JS/script.js"></script>
 </body>
 

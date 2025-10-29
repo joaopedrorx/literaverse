@@ -14,134 +14,34 @@
   --texto-claro: #FFFFFF;
   --texto-escuro: #111827;
   --texto-secundario-claro: rgba(255, 255, 255, 0.8);
-  --texto-secundario-escuro: rgba(17, 24, 39, 0.7);
-  --placeholder: rgba(0, 0, 0, .35);
-  --borda: rgba(0, 0, 0, .08);
+  /* Arquivo legado: o CSS foi fragmentado em módulos dentro de CSS/*. */
+  /* Para manutenção, veja os arquivos:
+     - CSS/base.css        (variáveis, reset, background)
+     - CSS/header.css      (cabecalho, nav, busca)
+     - CSS/layout.css      (herói, seções, containers)
+     - CSS/components.css  (botões, formulários, utilitários)
+     - CSS/cards.css       (cards, grids, detalhe-livro)
+     - CSS/perfil.css      (estilos de usuario/perfil)
+     - CSS/footer.css      (rodapé)
+     - CSS/responsive.css  (mídia queries / responsividade)
 
-  --input-bg-light: #F6EAFB;
-  --input-border-light: #E9DFF6;
-  --input-bg-dark: rgba(255, 255, 255, 0.03);
-  --input-border-dark: rgba(255, 255, 255, 0.06);
+     Este arquivo foi mantido apenas por compatibilidade; os HTMLs foram atualizados
+     para importar os módulos diretamente. Se preferir, remova este arquivo.
+  */
 
-  /* Círculos de background (modo claro) */
-  --circulo1-start: rgba(85, 38, 109, 0.95);
-  --circulo1-mid: rgba(123, 102, 209, 0.45);
-  --circulo1-end: rgba(246, 234, 251, 0.0);
-  --circulo2-start: rgba(123, 102, 209, 0.75);
-  --circulo2-mid: rgba(85, 38, 109, 0.35);
-  --circulo2-end: rgba(246, 234, 251, 0.0);
-}
-
-/* Reset e base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: var(--texto-escuro);
-  transition: background .2s, color .2s;
-  position: relative;
-  overflow-x: hidden
-}
-
-/* Background */
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  z-index: -1;
-  pointer-events: none;
-  border-radius: 50%;
-  filter: blur(80px)
-}
-
-body::before {
-  width: 60vmax;
-  height: 60vmax;
-  top: -30vmax;
-  left: -30vmax;
-  background: radial-gradient(circle at 30% 30%, var(--circulo1-start) 0%, var(--circulo1-mid) 40%, var(--circulo1-end) 70%)
-}
-
-body::after {
-  width: 70vmax;
-  height: 70vmax;
-  bottom: -35vmax;
-  right: -35vmax;
-  background: radial-gradient(circle at 70% 70%, var(--circulo2-start) 0%, var(--circulo2-mid) 40%, var(--circulo2-end) 70%)
-}
-
-/* Tema escuro */
-body.tema-escuro {
-  --circulo1-start: rgba(255, 255, 255, 0.20);
-  --circulo1-mid: rgba(255, 255, 255, 0.08);
-  --circulo1-end: rgba(255, 255, 255, 0.00);
-  --circulo2-start: rgba(255, 255, 255, 0.16);
-  --circulo2-mid: rgba(255, 255, 255, 0.06);
-  --circulo2-end: rgba(255, 255, 255, 0.00)
-}
-
-.fonte-titulo {
-  font-family: 'Lora', serif
-}
-
-/* Tema escuro */
-body.tema-escuro {
-  background: var(--fundo-escuro);
-  color: var(--texto-claro);
-  --placeholder: rgba(255, 255, 255, 0.6);
-  --borda: rgba(255, 255, 255, 0.06);
-  --texto-secundario-escuro: var(--texto-secundario-claro)
-}
-
-body.tema-claro {
-  --texto-escuro: var(--cor-destaque)
-}
-
-/* Container */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px
-}
-
-/* Cabeçalho */
-.cabecalho {
-  background: transparent;
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  padding: 12px 0;
-  transition: background .2s, color .2s;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px)
-}
-
-.cabecalho-grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem
-}
-
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  text-decoration: none;
-  color: inherit
-}
-
-.logo-imagem {
-  width: 40px;
+  /* Para compatibilidade retroativa, você pode importar os módulos a partir daqui,
+     descomente as linhas abaixo se quiser manter um único ponto de inclusão.
   height: 40px;
+  /*
+  @import url('base.css');
+  @import url('header.css');
+  @import url('layout.css');
+  @import url('components.css');
+  @import url('cards.css');
+  @import url('perfil.css');
+  @import url('footer.css');
+  @import url('responsive.css');
+  */
   object-fit: contain
 }
 

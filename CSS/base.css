@@ -1,0 +1,149 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+/* Variáveis de tema e reset base */
+:root {
+    --cor-primaria: #7b66d1;
+    --cor-secundaria: #F4E927;
+    --cor-terciaria: #8B5CF6;
+    --cor-destaque: #55266d;
+    --fundo-claro: #e8d8fc;
+    --fundo-escuro: #071024;
+    --superficie-clara: #F8F9FA;
+    --superficie-escura: #0F1724;
+    --texto-claro: #FFFFFF;
+    --texto-escuro: #111827;
+    --texto-secundario-claro: rgba(255, 255, 255, 0.8);
+    --texto-secundario-escuro: rgba(17, 24, 39, 0.7);
+    /* Compatibilidade — aliases usados por módulos fragmentados */
+    --bg: var(--superficie-clara);
+    --bg-secundario: var(--superficie-clara);
+    --texto: var(--texto-escuro);
+    --texto-secundario: var(--texto-secundario-escuro);
+    --placeholder: rgba(0, 0, 0, .35);
+    --borda: rgba(0, 0, 0, .08);
+
+    --input-bg-light: #F6EAFB;
+    --input-border-light: #E9DFF6;
+    --input-bg-dark: rgba(255, 255, 255, 0.03);
+    --input-border-dark: rgba(255, 255, 255, 0.06);
+
+    /* Círculos de background (modo claro) */
+    --circulo1-start: rgba(85, 38, 109, 0.95);
+    --circulo1-mid: rgba(123, 102, 209, 0.45);
+    --circulo1-end: rgba(246, 234, 251, 0.0);
+    --circulo2-start: rgba(123, 102, 209, 0.75);
+    --circulo2-mid: rgba(85, 38, 109, 0.35);
+    --circulo2-end: rgba(246, 234, 251, 0.0);
+}
+
+/* Reset e base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--texto-escuro);
+    transition: background .2s, color .2s;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background principal (círculos) */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+body::before {
+    width: 60vmax;
+    height: 60vmax;
+    top: -30vmax;
+    left: -30vmax;
+    background: radial-gradient(circle at 30% 30%, var(--circulo1-start) 0%, var(--circulo1-mid) 40%, var(--circulo1-end) 70%);
+}
+
+body::after {
+    width: 70vmax;
+    height: 70vmax;
+    bottom: -35vmax;
+    right: -35vmax;
+    background: radial-gradient(circle at 70% 70%, var(--circulo2-start) 0%, var(--circulo2-mid) 40%, var(--circulo2-end) 70%);
+}
+
+/* Tema escuro (variáveis dinâmicas) */
+body.tema-escuro {
+    --circulo1-start: rgba(255, 255, 255, 0.20);
+    --circulo1-mid: rgba(255, 255, 255, 0.08);
+    --circulo1-end: rgba(255, 255, 255, 0.00);
+    --circulo2-start: rgba(255, 255, 255, 0.16);
+    --circulo2-mid: rgba(255, 255, 255, 0.06);
+    --circulo2-end: rgba(255, 255, 255, 0.00);
+}
+
+.fonte-titulo {
+    font-family: 'Lora', serif;
+}
+
+/* Tema escuro ajustes globais */
+body.tema-escuro {
+    background: var(--fundo-escuro);
+    color: var(--texto-claro);
+    --placeholder: rgba(255, 255, 255, 0.6);
+    --borda: rgba(255, 255, 255, 0.06);
+    --texto-secundario-escuro: var(--texto-secundario-claro);
+    /* aliases para compatibilidade com módulos que usam --bg / --texto */
+    --bg: var(--superficie-escura);
+    --bg-secundario: rgba(255, 255, 255, 0.02);
+    --texto: var(--texto-claro);
+    --texto-secundario: var(--texto-secundario-claro);
+}
+
+/* Forçar contraste em selects nativos no tema escuro (cobre biblioteca e editor) */
+body.tema-escuro select,
+body.tema-escuro select option {
+    background-color: var(--bg);
+    color: var(--texto);
+    -webkit-text-fill-color: var(--texto);
+}
+
+/* Melhora para dropdowns estilizados (filtro, toolbar, inputs) */
+body.tema-escuro .campo-filtro,
+body.tema-escuro .campo-filtro option,
+body.tema-escuro .toolbar select,
+body.tema-escuro .toolbar select option,
+body.tema-escuro .form-input,
+body.tema-escuro .form-input option {
+    background-color: var(--bg);
+    color: var(--texto);
+    border-color: var(--input-border-dark);
+    -webkit-text-fill-color: var(--texto);
+}
+
+body.tema-claro {
+    --texto-escuro: var(--cor-destaque);
+}
+
+/* Container responsivo central */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
