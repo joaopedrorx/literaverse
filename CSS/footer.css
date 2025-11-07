@@ -1,6 +1,6 @@
 /* Rodapé */
 .rodape {
-    background: transparent;
+    background: var(--bg);
     padding: 3.5rem 0;
     margin-top: 3rem;
     font-size: 0.85rem;

@@ -3,18 +3,18 @@
 
 /* Variáveis de tema e reset base */
 :root {
-    --cor-primaria: #7b66d1;
-    --cor-secundaria: #F4E927;
-    --cor-terciaria: #8B5CF6;
-    --cor-destaque: #55266d;
-    --fundo-claro: #e8d8fc;
+    --cor-primaria: #4A4A8D;
+    --cor-secundaria: #ffef5d;
+    --cor-terciaria: #8A8AD8;
+    --cor-destaque: #1A1A3D;
+    --fundo-claro: #F2D4C2;
     --fundo-escuro: #071024;
-    --superficie-clara: #F8F9FA;
+    --superficie-clara: #c9b3e6;
     --superficie-escura: #0F1724;
     --texto-claro: #FFFFFF;
     --texto-escuro: #111827;
     --texto-secundario-claro: rgba(255, 255, 255, 0.8);
-    --texto-secundario-escuro: rgba(17, 24, 39, 0.7);
+    --texto-secundario-escuro: rgba(0, 6, 19, 0.7);
     /* Compatibilidade — aliases usados por módulos fragmentados */
     --bg: var(--superficie-clara);
     --bg-secundario: var(--superficie-clara);
@@ -44,48 +44,40 @@
     padding: 0;
 }
 
-html,
-body {
+html {
+    background-color: var(--fundo-claro);
     height: 100%;
 }
 
+body.tema-escuro+html,
+/* Seletor experimental, pode não funcionar em todos os casos */
+html:has(body.tema-escuro) {
+    /* Abordagem moderna e mais robusta */
+    background-color: var(--fundo-escuro);
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
+    background-image: url('../Imagens/fundo vert galaxia clara.png');
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
-    color: var(--texto-escuro);
-    transition: background .2s, color .2s;
-    position: relative;
-    overflow-x: hidden;
+    min-height: 100vh;
 }
 
-/* Background principal (círculos) */
-body::before,
-body::after {
-    content: "";
-    position: fixed;
-    z-index: -1;
-    pointer-events: none;
-    border-radius: 50%;
-    filter: blur(80px);
+
+.logo-imagem {
+    filter: invert(0);
 }
 
-body::before {
-    width: 60vmax;
-    height: 60vmax;
-    top: -30vmax;
-    left: -30vmax;
-    background: radial-gradient(circle at 30% 30%, var(--circulo1-start) 0%, var(--circulo1-mid) 40%, var(--circulo1-end) 70%);
+body.tema-claro .logo-imagem {
+    filter: invert(1);
 }
 
-body::after {
-    width: 70vmax;
-    height: 70vmax;
-    bottom: -35vmax;
-    right: -35vmax;
-    background: radial-gradient(circle at 70% 70%, var(--circulo2-start) 0%, var(--circulo2-mid) 40%, var(--circulo2-end) 70%);
-}
+
 
 /* Tema escuro (variáveis dinâmicas) */
 body.tema-escuro {
@@ -103,7 +95,7 @@ body.tema-escuro {
 
 /* Tema escuro ajustes globais */
 body.tema-escuro {
-    background: var(--fundo-escuro);
+    background-image: url('../Imagens/fundo vert galaxia escura.png');
     color: var(--texto-claro);
     --placeholder: rgba(255, 255, 255, 0.6);
     --borda: rgba(255, 255, 255, 0.06);
@@ -146,4 +138,30 @@ body.tema-claro {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+}
+
+/* Força o navbar do Bootstrap a ser transparente */
+.cabecalho.navbar {
+    background: transparent !important;
+    --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+    --bs-navbar-color: var(--texto);
+}
+
+/* Ajusta a cor do ícone do menu hambúrguer no tema escuro */
+body.tema-escuro .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+body.tema-escuro .logo-texto {
+    color: var(--texto-claro);
+}
+
+
+.cabecalho.navbar.sticky-top {
+    background: transparent;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+    --bs-navbar-color: var(--texto);
 }

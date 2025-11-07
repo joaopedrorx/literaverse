@@ -49,6 +49,10 @@ body.tema-escuro .perfil-sidebar {
     color: var(--texto-escuro);
 }
 
+body.tema-escuro .perfil-nome {
+    color: var(--texto-claro);
+}
+
 .perfil-bio {
     color: var(--texto-secundario-escuro);
     margin-bottom: 1rem;
@@ -110,7 +114,7 @@ body.tema-escuro .perfil-sidebar {
 
 .botao-adicionar,
 .botao-ver-todos {
-    color: var(--cor-terciaria);
+    color: var(--texto);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;

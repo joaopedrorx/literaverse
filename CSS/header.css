@@ -1,13 +1,11 @@
 /* Header e navegação */
 .cabecalho {
-    background: transparent;
+    background: var(--bg);
     position: sticky;
     top: 0;
     z-index: 40;
     padding: 12px 0;
     transition: background .2s, color .2s;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
 }
 
 .cabecalho-grid {

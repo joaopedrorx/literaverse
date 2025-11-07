@@ -24,7 +24,7 @@ body.tema-claro .cartao-livro {
 }
 
 body.tema-escuro .cartao-livro {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    background: var(--superficie-escura);
     box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
 }
 
@@ -64,7 +64,7 @@ body.tema-escuro .cartao-livro .info-livro {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    color: var(--texto-escuro);
+    color: var(--texto);
 }
 
 .autor-livro {
@@ -126,7 +126,7 @@ body.tema-escuro .cartao-obra {
 }
 
 .obra-status {
-    color: var(--cor-terciaria);
+    color: var(--texto-secundario-escuro);
     font-size: 0.9rem;
 }
 

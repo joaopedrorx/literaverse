@@ -353,22 +353,55 @@ body.tema-escuro .cartao-livro .info-livro {
   padding-top: 0.5rem;
 }
 
-/* Destaques */
+/* Estilos para a seção de herói */
+.secao-heroi {
+    background: linear-gradient(180deg, rgba(123, 102, 209, 0.1) 0%, rgba(232, 216, 252, 0.05) 100%);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.titulo-heroi {
+    font-size: 3rem;
+    color: var(--cor-destaque);
+    margin-bottom: 1rem;
+}
+
+.subtitulo-heroi {
+    font-size: 1.25rem;
+    color: var(--texto-secundario-escuro);
+    margin-bottom: 2rem;
+}
+
+.botao-heroi {
+    background-color: var(--cor-primaria);
+    color: var(--texto-claro);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.botao-heroi:hover {
+    background-color: var(--cor-destaque);
+}
+
+/* Estilos para a seção de destaque */
 .secao-destaque {
-  padding: 3.5rem 0
+    padding: 4rem 0;
 }
 
 .titulo-secao {
-  font-family: 'Lora', serif;
-  font-size: 1.5rem;
-  margin: 0;
-  color: var(--texto-claro);
+    font-size: 2rem;
+    color: var(--cor-destaque);
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .grid-livros {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
 
 .cartao-livro {
