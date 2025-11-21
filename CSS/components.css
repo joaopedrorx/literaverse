@@ -206,12 +206,12 @@ body.tema-escuro select.form-input:-webkit-autofill {
 
 /* Links e utilitários */
 .link-destaque {
-    color: var(--cor-primaria);
+    color: var(--cor-secundaria);
     text-decoration: underline
 }
 
 .link-destaque:hover {
-    color: var(--cor-primaria)
+    color: var(--cor-terciaria);
 }
 
 .link-externo {
