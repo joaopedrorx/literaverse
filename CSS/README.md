@@ -29,6 +29,12 @@ Notas:
 - Mantivemos `estilo.css` como arquivo legado (comentado) para compatibilidade. Novos estilos devem ser adicionados aos módulos existentes ou a novos arquivos específicos.
 - Prefira classes utilitárias em `components.css` em vez de estilos inline.
 - Para alterar variáveis (cores, espaçamentos), atualize `base.css`.
+- Paleta de Cores:
+    Azul Marinho Escuro	#1A1934
+	Azul Real/Índigo	#343D75
+	Azul Lavanda Médio	#6B74B8
+	Roxo/Malva Acinzentado	#996E9C
+	Bege Claro/Pêssego Pálido	#F4E0CC
 
 Como contribuir:
 - Adicione novas classes em `components.css` quando forem genéricas.

@@ -206,7 +206,7 @@ body.tema-escuro select.form-input:-webkit-autofill {
 
 /* Links e utilitários */
 .link-destaque {
-    color: var(--cor-terciaria);
+    color: var(--cor-primaria);
     text-decoration: underline
 }
 

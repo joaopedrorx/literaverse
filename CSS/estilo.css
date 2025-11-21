@@ -1105,10 +1105,6 @@ body.tema-escuro .botao-acao {
     grid-template-columns: 1fr;
     padding: 2rem 0
   }
-
-  .detalhe-imagem {
-    order: -1
-  }
 }
 
 /* ===================== */
