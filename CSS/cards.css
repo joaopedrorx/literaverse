@@ -17,6 +17,7 @@
 .cartao-livro:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     border-color: var(--cor-terciaria);
+
 }
 
 body.tema-claro .cartao-livro {
@@ -92,7 +93,8 @@ body.tema-escuro .cartao-livro .info-livro {
     background: var(--superficie-clara);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform .2s
+    transition: transform .2s;
+    position: relative;
 }
 
 .cartao-livro:hover {
@@ -204,6 +206,21 @@ body.tema-escuro .botao-acao {
     color: var(--texto-claro)
 }
 
+/* coloquei pra dar a sensação de que vc ta selecionando*/
+body.tema-escuro .botao-acao:hover {
+    border-color: #fff;
+    text-shadow: 0 0 5px #fff;
+    box-shadow: 0 0 5px #FFFFFF;
+    transform: scale(1.03);
+}
+
+body.tema-claro .botao-acao:hover {
+    border-color: var(--texto-escuro);
+    text-shadow: 0 0 5px var(--texto-escuro);
+    box-shadow: 0 0 5px var(--texto-escuro);
+    transform: scale(1.03);
+}
+
 .sinopse {
     margin-top: 1.25rem
 }
@@ -219,7 +236,7 @@ body.tema-escuro .botao-acao {
 .lista-comentarios {
     list-style: none;
     padding: 0;
-    margin: 0
+    margin: 0;
 }
 
 .comentario {
@@ -227,3 +244,56 @@ body.tema-escuro .botao-acao {
     border-top: 1px solid var(--borda);
     color: var(--texto-secundario-escuro)
 }
+
+/* do bglh de comentario privado*/
+body.tema-escuro .CLoginA  {
+    color: #F4E0CC;
+}
+
+body.tema-escuro .CLoginP {
+    color: rgb(96, 98, 98);
+}
+
+body.tema-claro .CLoginA  {
+    color: var(--texto-claro);
+}
+
+body.tema-claro .CLoginP {
+    color: var(--texto-escuro);
+}
+
+
+
+.Capa-Livro {
+    position: relative;
+}
+
+body.tema-escuro .info-hover {
+    position: absolute;
+    inset: 0; 
+    background: linear-gradient(180deg, #1A1934 0%, #343D75 100%);
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    border-radius: 5px;
+    overflow-y: auto;
+   
+}
+
+body.tema-claro .info-hover {
+    position: absolute;
+    inset: 0; 
+    background: linear-gradient(180deg, #F4E0CC 0%, #996E9C 100%);
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+.cartao-livro:hover .info-hover {
+    opacity: 1;
+}
+

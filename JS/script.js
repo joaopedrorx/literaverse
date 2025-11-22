@@ -438,3 +438,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// modal
+const botaoCurtir = document.getElementById("curtirLivro");
+const modal = document.getElementById("model");
+const fecharModal = document.getElementById("FecharModal");
+
+botaoCurtir.onclick = function AbrirModel() {
+    modal.showModal();
+}
+
+fecharModal.onclick = function FecharModel() {
+    modal.close();
+}

@@ -128,54 +128,55 @@
 
 /* Botão de tema */
 .botao-tema {
-  position: relative;
-  width: 36px;
-  height: 36px;
-  padding: .35rem;
-  border: 0;
-  background: transparent;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--texto-escuro)
+    position: relative;
+    width: 36px;
+    height: 36px;
+    padding: 0.35rem;
+    border: 0;
+    background: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--texto-escuro);
 }
 
 .botao-tema svg {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: transform .15s, opacity .15s
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform .15s, opacity .15s 
 }
 
 .icone-sol {
-  opacity: 1;
-  transform: scale(1)
+    opacity: 1;
+    transform: scale(1);
 }
 
 .icone-lua {
-  opacity: 0;
-  transform: scale(.8)
+    opacity: 0;
+    transform: scale(0.8);
 }
 
 body.tema-escuro .botao-tema {
-  color: var(--texto-claro)
+    color: var(--texto-claro);
 }
 
 body.tema-escuro .icone-sol {
-  opacity: 0;
-  transform: scale(.8)
+    opacity: 0;
+    transform: scale(0.8);
 }
 
 body.tema-escuro .icone-lua {
-  opacity: 1;
-  transform: scale(1)
+    opacity: 1;
+    transform: scale(1);
 }
+
 
 /* Acessibilidade */
 .oculto {

@@ -17,6 +17,7 @@
     <link rel="icon" href="Favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="Favicon/favicon-16x16.png" sizes="16x16">
     <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#4A2A5A">
 </head>
@@ -25,7 +26,6 @@
 
     <header class="cabecalho navbar navbar-expand-lg sticky-top">
         <div class="container">
-
             <a href="index.html" class="navbar-brand logo">
                 <img src="Imagens/logo sem fundo.png" alt="Literaverse" class="logo-imagem"
                     style="width: 120px; height: 100px;">
@@ -72,6 +72,7 @@
         </div>
     </header>
 
+
     <main class="container conteudo-principal detalhe-livro" style="display: block;">
         <div class="detalhe-grid">
             <aside class="detalhe-imagem">
@@ -83,19 +84,26 @@
                     <p><strong>Páginas:</strong> 256</p>
                 </div>
             </aside>
-
             <section class="detalhe-info">
                 <h1 class="titulo-livro fonte-titulo">Dom Casmurro</h1>
                 <p class="subtitulo-livro">Machado de Assis — Romance clássico</p>
 
                 <div class="acoes-livro" role="toolbar" aria-label="Ações do livro">
-                    <button class="botao-acao" id="curtirLivro" aria-pressed="false">Curtir</button>
+                    <button class="botao-acao" id="curtirLivro" aria-pressed="false">
+                        <i class='bx  bx-heart' style="font-size: 15px;"></i> Curtir</button> 
                     <a class="botao-acao" href="#" download>Download</a>
                 </div>
-
+                
                 <div class="sinopse">
                     <h2 class="titulo-secao fonte-titulo">Sinopse</h2>
-                    <p>Dom Casmurro é um romance que explora as memórias de Bento Santiago sobre sua juventude e seu
+                    <p> Em Dom Casmurro, o narrador Bento Santiago retoma a infância que passou na Rua de Matacavalos e 
+                        conta a história do amor e das desventuras que viveu com Capitu, uma das personagens mais enigmáticas e 
+                        intrigantes da literatura brasileira. Nas páginas deste romance, encontra-se a versão de um homem perturbado 
+                        pelo ciúme, que revela aos poucos sua psicologia complexa e enreda o leitor em sua narrativa ambígua acerca 
+                        do acontecimento ou não do adultério da mulher com olhos de ressaca, uma das maiores polêmicas da literatura 
+                        brasileira.
+                        <br><br>
+                        É um romance que explora as memórias de Bento Santiago sobre sua juventude e seu
                         relacionamento com Capitu. A obra aborda temas como ciúme, memória e subjetividade.</p>
                 </div>
 
@@ -106,22 +114,72 @@
                     <div style="padding-top:.5rem"><button class="botao-cadastro" id="salvarNotas">Salvar notas</button>
                     </div>
                 </div>
-
+                <br>
+                <hr>
                 <div class="comentarios">
                     <h3>Comentários</h3>
-                    <form id="form-comentario" class="form-comentario">
+                    <!--<form id="form-comentario" class="form-comentario">
                         <label for="novo-comentario" class="apenas-leitura">Novo comentário</label>
                         <textarea id="novo-comentario" class="form-input" rows="3"
                             placeholder="Escreva um comentário público..."></textarea>
                         <div style="padding-top:.5rem"><button type="submit" class="botao-acao">Comentar</button></div>
-                    </form>
-
+                    </form>-->
+                    <br>
+                    <p class="CLoginP">Você deve <a href="cadastro.html" class="CLoginA">Registrar</a> ou 
+                        <a href="login.html" class="CLoginA">Entrar</a> para postar um comentário.</p>
+                    <br>
                     <ul class="lista-comentarios">
                         <li class="comentario"><strong>Ana</strong> — Adorei a construção dos personagens.</li>
                         <li class="comentario"><strong>Pedro</strong> — Um clássico atemporal.</li>
                     </ul>
                 </div>
             </section>
+        </div>
+        <div id="model-caixa">
+            <dialog class="Modal" id="model">
+                <div class="Botao-fechar"><button class="botao-acao" id="FecharModal">x</button></div>
+                <form id="formulario-login"> 
+                    <div class="titulo-P">
+                        <h1 class="fonte-titulo">Login</h1>
+                    </div>
+                    <br><br>
+                    <h3 class="titulo-pagina fonte-titulo TextoTema">Acesse sua conta para continuar</h3>
+                    <div class="grupo-entrada TextoTema">
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" name="email" class="form-input" type="email" placeholder="exemplo@email.com" />
+                        <div id="erro-email-login" class="mensagem-erro" aria-live="polite"></div>
+                    </div>
+
+                    <div class="grupo-entrada TextoTema">
+                        <label for="senha" class="form-label">Senha</label>
+                        <div class="campo-senha-container">
+                            <input id="senha" name="senha" class="form-input" type="password" />
+                            <button type="button" class="botao-mostrar-senha" aria-label="Mostrar senha" data-target="senha">
+                                <svg class="icone-olho-fechado" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+                                <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+                                <line x1="2" y1="2" x2="22" y2="22" />
+                                </svg>
+                                    <svg class="icone-olho-aberto" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="erro-senha-login" class="mensagem-erro" aria-live="polite">
+                        </div>
+                    </div>
+                    <div style="padding-top:8px">
+                        <button id="botao-enviar-login" type="submit" class="submit-button botao-acao">Entrar</button>
+                        <p style="text-align: center;"><a href="#SemSenha" class="CLoginA">Esqueceu sua senha?</a></p>
+                    </div>
+                    <div id="erro-formulario-login" class="mensagem-erro" aria-live="assertive"></div>
+                    <p style="text-align: center; margin-top: 1rem;" class="TextoTema">
+                         Não tem uma conta? <a href="cadastro.html" class="botao-acao"> Cadastre-se aqui</a> .
+                    </p>
+                </form>
+            </dialog> 
         </div>
     </main>
 

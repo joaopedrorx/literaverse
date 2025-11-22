@@ -17,12 +17,12 @@
     <link rel="icon" href="Favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="Favicon/favicon-16x16.png" sizes="16x16">
     <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#4A2A5A">
 </head>
 
 <body class="tema-claro"> <!-- O script.js vai gerenciar o tema -->
-
     <header class="cabecalho navbar navbar-expand-lg sticky-top">
         <div class="container">
 
@@ -77,26 +77,125 @@
 
         <div class="barra-filtros" aria-hidden="true" style="margin:1.5rem 0;display:flex;gap:1rem;align-items:center;">
             <span class="rotulo-filtro">Filtrar por:</span>
+            <!-- <span class="rotulo-filtro" style="margin-top: 30px;">Filtrar por:</span> -->
             <select class="campo-filtro">
                 <option>Gênero</option>
                 <option>Ficção Científica</option>
                 <option>Fantasia</option>
                 <option>Romance</option>
-            </select>
+            </select> 
             <select class="campo-filtro">
-                <option>Classificação</option>
-                <option>5 Estrelas</option>
+                <option style="border-radius: 50%;">Classificação</option>
+                <option style="border-radius: 50%;">5 Estrelas</option>
                 <option>4+ Estrelas</option>
             </select>
+
+
+
+            <!--ESTOU TRABALHANDO NISSO AINDA, MAS SE QUISER TESTAR É SÓ COMENTAR O DE CIMA E DESCOMENTAR ESSE,
+                E ARRUMAR O SVG QUE EU TIVE QUE DANIFICAR PRA CONSEGUIR COMENTAR-->
+    
+          
+
+           <!-- <div class="select">
+                <div id="category-select">
+                    <label for="options-view-button"></label>
+                    <input type="checkbox" id="options-view-button">
+
+                    <div id="select-button">
+                        <div id="selected-value">Selecione o gênero</div>
+
+                        <div id="chevrons">
+                            <svg  data-type="chevron-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                                fill="currentColor" viewBox="0 0 24 24" > 
+                                <!-Boxicons v3.0.4 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <!-- <path d="m7.71 15.71 4.29-4.3 4.29 4.3 1.42-1.42L12 8.59l-5.71 5.7z"></path>
+                            </svg>
+                            <svg  data-type="chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                                fill="currentColor" viewBox="0 0 24 24" >
+                                <!-Boxicons v3.0.4 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <!-- <path d="m12 15.41 5.71-5.7-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42z"></path>
+                            </svg>
+                        </div>
+                    </div> 
+                </div>
+                <ul id="options">
+                    <li class="option">
+                        <input type="radio" name="category" value="bakery" data-label="Ficção Científica">
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                            fill="currentColor" viewBox="0 0 24 24" >
+                            <!-Boxicons v3.0.4 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <!-- <path d="M15 7.66V4h1V2H8v2h1v3.66l-5.4 6.95c-1.08 1.38-1.27 3.29-.48 4.86S5.47 22 7.22 22h9.57c1.75 0 3.32-.97 4.1-2.53s.6-3.48-.48-4.86l-5.4-6.95Zm-4 .69V4.01h2v4.34l5.2 6.68c-1.79-.3-2.9-1.03-4.14-1.86-1.31-.87-2.77-1.83-5.11-2.18zm8.1 10.23c-.44.88-1.33 1.43-2.31 1.43H7.21c-.98 0-1.87-.55-2.31-1.43s-.34-1.96.27-2.74l2.32-2.98c2.6.1 3.94.97 5.45 1.98 1.54 1.02 3.28 2.16 6.4 2.31.05.48-.03.98-.25 1.43Z"></path>
+                        </svg> 
+                        <span class="label">Ficção Científica</span>
+                        <svg  data-type="check" xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                            fill="currentColor" viewBox="0 0 24 24" >
+                            <!-Boxicons v3.0.4 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <!-- <path d="M9 15.59 4.71 11.3 3.3 12.71l5 5c.2.2.45.29.71.29s.51-.1.71-.29l11-11-1.41-1.41L9.02 15.59Z"></path>
+                        </svg>
+                    </li> 
+                    <li class="option">
+                        <input type="radio" name="category" value="bakery" data-label="Fantasia">
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                            fill="currentColor" viewBox="0 0 24 24" >
+                            <!-Boxicons v3.0.4 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <!-- <path d="M10.5 5 11.5 4.33 12.5 5 12.17 3.83 13 3.12 12 3 11.5 2 11 3 10 3.12 10.83 3.83 10.5 5z"></path><path d="M20.33 13.67 19.5 12 18.67 13.67 17 13.88 18.39 15.06 17.83 17 19.5 15.89 21.17 17 20.61 15.06 22 13.88 20.33 13.67z"></path><path d="M4.83 9 6.5 7.89 8.17 9 7.61 7.05 9 5.88 7.33 5.67 6.5 4 5.67 5.67 4 5.88 5.39 7.05 4.83 9z"></path><path d="m18.71,2.29c-.39-.39-1.02-.39-1.41,0L2.29,17.29c-.39.39-.39,1.02,0,1.41l3,3c.2.2.45.29.71.29s.51-.1.71-.29l15-15c.39-.39.39-1.02,0-1.41l-3-3ZM6,19.59l-1.59-1.59,9.09-9.09,1.59,1.59-9.09,9.09Zm10.5-10.5l-1.59-1.59,3.09-3.09,1.59,1.59-3.09,3.09Z"></path>
+                        </svg> 
+                        <span class="label">Fantasia</span>
+                        <svg data-type="check" xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                            fill="currentColor" viewBox="0 0 24 24" >
+                            <!-Boxicons v3.0.4 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <!-- <path d="M9 15.59 4.71 11.3 3.3 12.71l5 5c.2.2.45.29.71.29s.51-.1.71-.29l11-11-1.41-1.41L9.02 15.59Z"></path>
+                        </svg>
+                    </li> 
+                    <li class="option">
+                        <input type="radio" name="category" value="bakery" data-label="Romance">
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                            fill="currentColor" viewBox="0 0 24 24" >
+                            <!-Boxicons v3.0.4 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <!-- <path d="M11.29 20.66c.2.2.45.29.71.29s.51-.1.71-.29l7.5-7.5c2.35-2.35 2.35-6.05 0-8.41-2.3-2.28-5.85-2.35-8.21-.2-2.36-2.15-5.91-2.09-8.21.2-2.35 2.36-2.35 6.06 0 8.41zM5.21 6.16C6 5.38 7 4.99 8.01 4.99s2.01.39 2.79 1.17l.5.5c.39.39 1.02.39 1.41 0l.5-.5c1.56-1.56 4.02-1.56 5.59 0 1.56 1.57 1.56 4.02 0 5.58l-6.79 6.79-6.79-6.79a3.91 3.91 0 0 1 0-5.58Z"></path>
+                        </svg>
+                        <span class="label">Romance</span>
+                        <svg data-type="check" xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                            fill="currentColor" viewBox="0 0 24 24" >
+                            <!-Boxicons v3.0.4 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <!-- <path d="M9 15.59 4.71 11.3 3.3 12.71l5 5c.2.2.45.29.71.29s.51-.1.71-.29l11-11-1.41-1.41L9.02 15.59Z"></path>
+                        </svg>
+                    </li>
+                </ul>
+            </div> --> 
+
+
         </div>
 
         <section class="grid-livros">
             <article class="cartao-livro">
-                <a href="detalhe-livro.html"><img src="Imagens/capadomcasmurro.jpg" alt="Capa do livro Dom Casmurro"
-                        class="imagem-livro"></a>
-                <div class="info-livro">
-                    <h3 class="titulo-livro">Dom Casmurro</h3>
-                    <p class="autor-livro">Machado de Assis</p>
+                <div class="Capa-Livro">
+                    <a href="detalhe-livro.html"><img src="Imagens/capadomcasmurro.jpg" alt="Capa do livro Dom Casmurro"
+                            class="imagem-livro"></a>
+                    <div class="info-livro">
+                        <h3 class="titulo-livro">Dom Casmurro</h3>
+                        <p class="autor-livro">Machado de Assis</p>
+                    </div>
+
+                    <div class="info-hover">
+                        <p>
+                            Bento Santiago conta lembranças de sua infância e narra sua relação com Capitu, uma mulher misteriosa e 
+                            muito marcante. A história mostra o ciúme crescente de Bento e sua dúvida obsessiva sobre se Capitu o traiu ou 
+                            não. O livro apresenta uma narrativa ambígua, que faz o leitor questionar a versão dos acontecimentos e 
+                            entender a mente complexa do narrador.
+                        </p>
+                        <hr>
+                        <p>
+                            Autor: Machado de Assis
+                            <br>
+                            Editora: Exemplo Editorial
+                            <br>
+                            Ano: 1899
+                            <br>
+                            Páginas: 256
+                        </p>
+                    </div>
                 </div>
             </article>
 
