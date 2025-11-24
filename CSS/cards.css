@@ -31,10 +31,9 @@ body.tema-escuro .cartao-livro {
 
 .imagem-livro {
     width: 100%;
-    aspect-ratio: 2/3;
-    object-fit: cover;
+    height: 360px; /* Altura fixa para todas as capas */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
     display: block;
-    max-height: 420px;
 }
 
 .cartao-livro .info-livro {
@@ -99,12 +98,6 @@ body.tema-escuro .cartao-livro .info-livro {
 
 .cartao-livro:hover {
     transform: translateY(-6px)
-}
-
-.imagem-livro {
-    width: 100%;
-    aspect-ratio: 2/3;
-    object-fit: cover
 }
 
 /* Cartões de obra (perfil) */
