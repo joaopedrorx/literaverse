@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (botao) { botao.disabled = true; botao.textContent = 'Criando conta...'; }
 
             // Usando a simulação de API 
-            RegistroAPI(novoUsuario)
+            simularRegistroAPI(novoUsuario)
                 .then(sessaoUsuario => {
                     // Sucesso no registro
                     console.log("Registro bem-sucedido, salvando sessão...");
