@@ -271,7 +271,6 @@ body.tema-escuro .info-hover {
     transition: opacity .3s ease;
     border-radius: 5px;
     overflow-y: auto;
-   
 }
 
 body.tema-claro .info-hover {
@@ -288,5 +287,6 @@ body.tema-claro .info-hover {
 
 .cartao-livro:hover .info-hover {
     opacity: 1;
+    pointer-events: auto;
 }
 
